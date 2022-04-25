@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1649861152560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649861174957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n import { View } from 'react-native';\r\n const App = () => {\r\n    return (\r\n-      <View style={{ backgroundColor: \"red\" }}>\r\n+      <View style={{ backgroundColor: \"red\" , flex:1}}>\r\n \r\n       </View>\r\n    )\r\n \r\n"
+                }
+            ],
+            "date": 1649861152560,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport { View } from 'react-native';\r\nconst App = () => {\r\n   return (\r\n      <View style={{ backgroundColor: \"red\" }}>\r\n\r\n      </View>\r\n   )\r\n\r\n\r\n};\r\nexport default App;\r\n"
+        }
+    ]
+}

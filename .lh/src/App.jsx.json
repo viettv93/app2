@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1649861037315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1649861037315,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport {View} from 'react-native';\r\nconst App = () => {\r\nreturn(\r\n   <View style={{backgroundColor: \"red\"}}>\r\n\r\n   </View>\r\n)\r\n\r\n\r\n};\r\nexport default App;\r\n"
+        }
+    ]
+}

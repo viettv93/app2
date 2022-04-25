@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/view/screens/notifi/Components.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1649862282165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650907132756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \r\n \r\n const Notification=()=>{\r\n     return(\r\n-        <View style={{flex:1,backgroundColor: colors.orange}}></View>\r\n+        <View style={{flex:1,backgroundColor: colors.green}}></View>\r\n     )\r\n }\r\n export default Notification\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1649862282165,
+            "name": "Commit-0",
+            "content": "import React from \"react\"\r\nimport { View } from \"react-native\"\r\nimport { colors, fonts } from \"../../styles/typography\"\r\n\r\n\r\n\r\nconst Notification=()=>{\r\n    return(\r\n        <View style={{flex:1,backgroundColor: colors.orange}}></View>\r\n    )\r\n}\r\nexport default Notification"
+        }
+    ]
+}

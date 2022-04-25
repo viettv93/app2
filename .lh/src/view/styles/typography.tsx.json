@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/view/styles/typography.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1649860293260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649860399379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n const fonts={\r\n-\r\n+    normal: \"FS PFBeauSansPro-Black\",\r\n+    bold: \"FS PFBeauSansPro-Bold\",\r\n+    italic:\"FS PFBeauSansPro-BbookItalic\"\r\n }\r\n const colors ={\r\n     orange: \"#EB960A\",\r\n     red: \"#EE0033\",\r\n@@ -9,5 +11,7 @@\n     white : \"#FFFFFF\",\r\n     black: '#44494D',\r\n     gray:'#97A0AF'\r\n \r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+export {fonts, colors}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649866025972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n     blue: \"#2D9CDB\",\r\n     green :\"#44AB4A\",\r\n     white : \"#FFFFFF\",\r\n     black: '#44494D',\r\n-    gray:'#97A0AF'\r\n+    gray:'#97A0AF',\r\n+    background: '#E5E5E5'\r\n \r\n }\r\n \r\n export {fonts, colors}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650384356417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize'\r\n+\r\n const fonts={\r\n     normal: \"FS PFBeauSansPro-Black\",\r\n     bold: \"FS PFBeauSansPro-Bold\",\r\n-    italic:\"FS PFBeauSansPro-BbookItalic\"\r\n+    italic:\"FS PFBeauSansPro-BbookItalic\",\r\n+    \r\n }\r\n const colors ={\r\n     orange: \"#EB960A\",\r\n     red: \"#EE0033\",\r\n@@ -13,6 +16,10 @@\n     gray:'#97A0AF',\r\n     background: '#E5E5E5'\r\n \r\n }\r\n-\r\n+ export const fontSite ={\r\n+    10:RFPercentage(2),\r\n+    14:RFPercentage(2.2),\r\n+    16:RFPercentage(3.2)\r\n+}\r\n export {fonts, colors}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650384545767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     gray:'#97A0AF',\r\n     background: '#E5E5E5'\r\n \r\n }\r\n- export const fontSite ={\r\n+ export const fontSize ={\r\n     10:RFPercentage(2),\r\n     14:RFPercentage(2.2),\r\n     16:RFPercentage(3.2)\r\n }\r\n"
+                },
+                {
+                    "date": 1650386552593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     white : \"#FFFFFF\",\r\n     black: '#44494D',\r\n     gray:'#97A0AF',\r\n     background: '#E5E5E5'\r\n+    \r\n \r\n }\r\n  export const fontSize ={\r\n     10:RFPercentage(2),\r\n"
+                }
+            ],
+            "date": 1649860293260,
+            "name": "Commit-0",
+            "content": "const fonts={\r\n\r\n}\r\nconst colors ={\r\n    orange: \"#EB960A\",\r\n    red: \"#EE0033\",\r\n    blue: \"#2D9CDB\",\r\n    green :\"#44AB4A\",\r\n    white : \"#FFFFFF\",\r\n    black: '#44494D',\r\n    gray:'#97A0AF'\r\n\r\n}"
+        }
+    ]
+}

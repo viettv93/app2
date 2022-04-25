@@ -1,0 +1,266 @@
+{
+    "sourceFile": "src/view/screens/home/FlatlistHome.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 62,
+            "patches": [
+                {
+                    "date": 1650290278452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650290456412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,13 @@\n  img: require('../../assets/image/icon/tao_don.png') ,title:\"Tạo đơn \"},\r\n {img: require('../../assets/image/icon/don_hang.png'),title: \"Đơn hàng\"},\r\n {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'}]\r\n-\r\n+const array2=[{\r\n+    img: require('../../assets/image/icon/doanh_thu.png') ,title:\"Doanh thu\"},\r\n+   {img: require('../../assets/image/icon/hoa_hong.png'),title: \"Hoa hồng\"},\r\n+   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n+   ]\r\n const FlatListHome=()=>{\r\n \r\n const renderItem=({item, index})=>{\r\n     return(\r\n@@ -29,8 +33,13 @@\n        renderItem={renderItem}\r\n        showsHorizontalScrollIndicator={false}\r\n        showsVerticalScrollIndicator={false}\r\n        horizontal={true}/>\r\n+       <FlatList \r\n+       data={array2}\r\n+       showsHorizontalScrollIndicator={true}\r\n+       showsVerticalScrollIndicator={true}\r\n+       horizontal={true}/>\r\n </View>\r\n     )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1650290504839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,32 +14,41 @@\n    {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n    ]\r\n const FlatListHome=()=>{\r\n \r\n-const renderItem=({item, index})=>{\r\n+const renderItem1=({item, index})=>{\r\n     return(\r\n         <View style={{alignItems: 'center'}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text>{item.title}</Text>\r\n         </View>\r\n     )\r\n }\r\n+const renderItem2=({item, index})=>{\r\n+    return(\r\n+        <View style={{alignItems: 'center'}}>\r\n+         <Image source={item.img} resizeMode=\"contain\"/>\r\n+         <Text>{item.title}</Text>\r\n+        </View>\r\n+    )\r\n+}\r\n \r\n \r\n \r\n     return(\r\n <View style={{flex:1, backgroundColor: colors.white}}>\r\n <FlatList \r\n        data={array1}\r\n-       renderItem={renderItem}\r\n+       renderItem={renderItem1}\r\n        showsHorizontalScrollIndicator={false}\r\n        showsVerticalScrollIndicator={false}\r\n        horizontal={true}/>\r\n        <FlatList \r\n        data={array2}\r\n        showsHorizontalScrollIndicator={true}\r\n        showsVerticalScrollIndicator={true}\r\n-       horizontal={true}/>\r\n+       horizontal={true}\r\n+       renderItem={renderItem2}/>\r\n </View>\r\n     )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1650290526894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,19 +16,19 @@\n const FlatListHome=()=>{\r\n \r\n const renderItem1=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center'}}>\r\n+        <View style={{alignItems: 'center', flex:1}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text>{item.title}</Text>\r\n         </View>\r\n     )\r\n }\r\n const renderItem2=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center'}}>\r\n+        <View style={{alignItems: 'center', flex:1}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n-         <Text>{item.title}</Text>\r\n+         <Text >{item.title}</Text>\r\n         </View>\r\n     )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1650290545936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n const FlatListHome=()=>{\r\n \r\n const renderItem1=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center', flex:1}}>\r\n+        <View style={{alignItems: 'center', flex:1, backgroundColor: colors.white}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text>{item.title}</Text>\r\n         </View>\r\n     )\r\n"
+                },
+                {
+                    "date": 1650290594293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,17 +16,17 @@\n const FlatListHome=()=>{\r\n \r\n const renderItem1=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center', flex:1, backgroundColor: colors.white}}>\r\n+        <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text>{item.title}</Text>\r\n         </View>\r\n     )\r\n }\r\n const renderItem2=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center', flex:1}}>\r\n+        <View style={{alignItems: 'center'}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text >{item.title}</Text>\r\n         </View>\r\n     )\r\n"
+                },
+                {
+                    "date": 1650290747648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \r\n \r\n \r\n     return(\r\n-<View style={{flex:1, backgroundColor: colors.white}}>\r\n+<View style={{flex:1, backgroundColor: colors.white, marginTop: 60}}>\r\n <FlatList \r\n        data={array1}\r\n        renderItem={renderItem1}\r\n        showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650290824342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \r\n \r\n \r\n     return(\r\n-<View style={{flex:1, backgroundColor: colors.white, marginTop: 60}}>\r\n+<View style={{flex:1, backgroundColor: colors.white}}>\r\n <FlatList \r\n        data={array1}\r\n        renderItem={renderItem1}\r\n        showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650290852247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     )\r\n }\r\n const renderItem2=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center'}}>\r\n+        <View style={{alignItems: 'center', justifyContent: 'space-between'}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text >{item.title}</Text>\r\n         </View>\r\n     )\r\n"
+                },
+                {
+                    "date": 1650290865266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     )\r\n }\r\n const renderItem2=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center', justifyContent: 'space-between'}}>\r\n+        <View style={{alignItems: 'center',}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text >{item.title}</Text>\r\n         </View>\r\n     )\r\n"
+                },
+                {
+                    "date": 1650290916195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     )\r\n }\r\n const renderItem2=({item, index})=>{\r\n     return(\r\n-        <View style={{alignItems: 'center',}}>\r\n+        <View style={{alignItems: 'center'}}>\r\n          <Image source={item.img} resizeMode=\"contain\"/>\r\n          <Text >{item.title}</Text>\r\n         </View>\r\n     )\r\n@@ -34,9 +34,9 @@\n \r\n \r\n \r\n     return(\r\n-<View style={{flex:1, backgroundColor: colors.white}}>\r\n+<View style={{flex:1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'space-between'}}>\r\n <FlatList \r\n        data={array1}\r\n        renderItem={renderItem1}\r\n        showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650290932160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \r\n \r\n \r\n     return(\r\n-<View style={{flex:1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'space-between'}}>\r\n+<View style={{flex:1, backgroundColor: colors.white, alignItems: 'center', justifyContent:'space-around'}}>\r\n <FlatList \r\n        data={array1}\r\n        renderItem={renderItem1}\r\n        showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650290995265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,55 +1,61 @@\n-import React from \"react\";\r\n-import { FlatList, View, Image,Text } from \"react-native\";\r\n-import { colors,fonts } from \"../../styles/typography\";\r\n+import React from 'react';\r\n+import {FlatList, View, Image, Text} from 'react-native';\r\n+import {colors, fonts} from '../../styles/typography';\r\n \r\n+const array1 = [\r\n+  {\r\n+    img: require('../../assets/image/icon/tao_don.png'),\r\n+    title: 'Tạo đơn ',\r\n+  },\r\n+  {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n+  {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n+  {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n+];\r\n+const array2 = [\r\n+  {\r\n+    img: require('../../assets/image/icon/doanh_thu.png'),\r\n+    title: 'Doanh thu',\r\n+  },\r\n+  {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n+  {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n+];\r\n+const FlatListHome = () => {\r\n+  const renderItem1 = ({item, index}) => {\r\n+    return (\r\n+      <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n+        <Image source={item.img} resizeMode=\"contain\" />\r\n+        <Text>{item.title}</Text>\r\n+      </View>\r\n+    );\r\n+  };\r\n+  const renderItem2 = ({item, index}) => {\r\n+    return (\r\n+      <View style={{alignItems: 'center'}}>\r\n+        <Image source={item.img} resizeMode=\"contain\" />\r\n+        <Text>{item.title}</Text>\r\n+      </View>\r\n+    );\r\n+  };\r\n \r\n-const array1=[{\r\n- img: require('../../assets/image/icon/tao_don.png') ,title:\"Tạo đơn \"},\r\n-{img: require('../../assets/image/icon/don_hang.png'),title: \"Đơn hàng\"},\r\n-{img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n-{img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'}]\r\n-const array2=[{\r\n-    img: require('../../assets/image/icon/doanh_thu.png') ,title:\"Doanh thu\"},\r\n-   {img: require('../../assets/image/icon/hoa_hong.png'),title: \"Hoa hồng\"},\r\n-   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n-   ]\r\n-const FlatListHome=()=>{\r\n+  return (\r\n+    <View\r\n\\ No newline at end of file\n+      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center'}}>\r\n+      <FlatList\r\n+        data={array1}\r\n+        renderItem={renderItem1}\r\n+        showsHorizontalScrollIndicator={false}\r\n+        showsVerticalScrollIndicator={false}\r\n+        horizontal={true}\r\n+      />\r\n+      <FlatList\r\n+        data={array2}\r\n+        showsHorizontalScrollIndicator={true}\r\n+        showsVerticalScrollIndicator={true}\r\n+        horizontal={true}\r\n+        renderItem={renderItem2}\r\n+      />\r\n+    </View>\r\n+  );\r\n+};\r\n \r\n-const renderItem1=({item, index})=>{\r\n-    return(\r\n-        <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n-         <Image source={item.img} resizeMode=\"contain\"/>\r\n-         <Text>{item.title}</Text>\r\n-        </View>\r\n-    )\r\n-}\r\n-const renderItem2=({item, index})=>{\r\n-    return(\r\n-        <View style={{alignItems: 'center'}}>\r\n-         <Image source={item.img} resizeMode=\"contain\"/>\r\n-         <Text >{item.title}</Text>\r\n-        </View>\r\n-    )\r\n-}\r\n-\r\n-\r\n-\r\n-    return(\r\n-<View style={{flex:1, backgroundColor: colors.white, alignItems: 'center', justifyContent:'space-around'}}>\r\n-<FlatList \r\n-       data={array1}\r\n-       renderItem={renderItem1}\r\n-       showsHorizontalScrollIndicator={false}\r\n-       showsVerticalScrollIndicator={false}\r\n-       horizontal={true}/>\r\n-       <FlatList \r\n-       data={array2}\r\n-       showsHorizontalScrollIndicator={true}\r\n-       showsVerticalScrollIndicator={true}\r\n-       horizontal={true}\r\n-       renderItem={renderItem2}/>\r\n-</View>\r\n-    )\r\n-}\r\n-\r\n-export default FlatListHome\n+export default FlatListHome;\r\n"
+                },
+                {
+                    "date": 1650293247427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n       <View style={{alignItems: 'center'}}>\r\n         <Image source={item.img} resizeMode=\"contain\" />\r\n-        <Text>{item.title}</Text>\r\n+        <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n \r\n@@ -48,8 +48,9 @@\n         horizontal={true}\r\n       />\r\n       <FlatList\r\n         data={array2}\r\n+        style={{alignItems:'center', justifyContent: 'space-evenly'}}\r\n         showsHorizontalScrollIndicator={true}\r\n         showsVerticalScrollIndicator={true}\r\n         horizontal={true}\r\n         renderItem={renderItem2}\r\n@@ -57,5 +58,5 @@\n     </View>\r\n   );\r\n };\r\n \r\n-export default FlatListHome;\n\\ No newline at end of file\n+export default FlatListHome;\r\n"
+                },
+                {
+                    "date": 1650293278906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   };\r\n \r\n   return (\r\n     <View\r\n-      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center'}}>\r\n+      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'space-evenly'}}>\r\n       <FlatList\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n@@ -48,9 +48,9 @@\n         horizontal={true}\r\n       />\r\n       <FlatList\r\n         data={array2}\r\n-        style={{alignItems:'center', justifyContent: 'space-evenly'}}\r\n+        style={{alignItems:'center'}}\r\n         showsHorizontalScrollIndicator={true}\r\n         showsVerticalScrollIndicator={true}\r\n         horizontal={true}\r\n         renderItem={renderItem2}\r\n"
+                },
+                {
+                    "date": 1650293287325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   };\r\n \r\n   return (\r\n     <View\r\n-      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'space-evenly'}}>\r\n+      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'center'}}>\r\n       <FlatList\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650293341797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" />\r\n+        <Image source={item.img} resizeMode=\"contain\" style={{width:40, height:40}}/>\r\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n@@ -48,9 +48,8 @@\n         horizontal={true}\r\n       />\r\n       <FlatList\r\n         data={array2}\r\n-        style={{alignItems:'center'}}\r\n         showsHorizontalScrollIndicator={true}\r\n         showsVerticalScrollIndicator={true}\r\n         horizontal={true}\r\n         renderItem={renderItem2}\r\n"
+                },
+                {
+                    "date": 1650293354557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   };\r\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n       <View style={{alignItems: 'center'}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" />\r\n+        <Image source={item.img} resizeMode=\"contain\" style={{width:40, height:40}}/>\r\n         <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n"
+                },
+                {
+                    "date": 1650293384997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n       />\r\n       <FlatList\r\n         data={array2}\r\n         showsHorizontalScrollIndicator={true}\r\n+        style={{justifyContent: 'space-around'}}\r\n         showsVerticalScrollIndicator={true}\r\n         horizontal={true}\r\n         renderItem={renderItem2}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650293405354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,8 @@\n       />\r\n       <FlatList\r\n         data={array2}\r\n         showsHorizontalScrollIndicator={true}\r\n-        style={{justifyContent: 'space-around'}}\r\n         showsVerticalScrollIndicator={true}\r\n         horizontal={true}\r\n         renderItem={renderItem2}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650293422557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,17 +22,17 @@\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" style={{width:40, height:40}}/>\r\n+        <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n       <View style={{alignItems: 'center'}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" style={{width:40, height:40}}/>\r\n+        <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n"
+                },
+                {
+                    "date": 1650293451961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     );\r\n   };\r\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center'}}>\r\n+      <View style={{alignItems: 'center', marginLeft:40}}>\r\n         <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n"
+                },
+                {
+                    "date": 1650293468731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     );\r\n   };\r\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center', marginLeft:40}}>\r\n+      <View style={{alignItems: 'center', marginRight:40}}>\r\n         <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n"
+                },
+                {
+                    "date": 1650293482554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n ];\r\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center', backgroundColor: colors.white}}>\r\n+      <View style={{alignItems: 'center', backgroundColor: colors.white,, marginRight:40}}>\r\n         <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n"
+                },
+                {
+                    "date": 1650293498622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n ];\r\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center', backgroundColor: colors.white,, marginRight:40}}>\r\n+      <View style={{alignItems: 'center', backgroundColor: colors.white, marginRight:40}}>\r\n         <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n@@ -38,9 +38,9 @@\n   };\r\n \r\n   return (\r\n     <View\r\n-      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'center'}}>\r\n+      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'center', paddingHorizontal:18}}>\r\n       <FlatList\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650297834056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,22 +3,19 @@\n import {colors, fonts} from '../../styles/typography';\r\n \r\n const array1 = [\r\n   {\r\n-    img: require('../../assets/image/icon/tao_don.png'),\r\n-    title: 'Tạo đơn ',\r\n-  },\r\n+    img: require('../../assets/image/icon/tao_don.png'),title: 'Tạo đơn '},\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n ];\r\n const array2 = [\r\n   {\r\n-    img: require('../../assets/image/icon/doanh_thu.png'),\r\n-    title: 'Doanh thu',\r\n-  },\r\n+    img: require('../../assets/image/icon/doanh_thu.png'),title: 'Doanh thu'},\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n+  {img :require(''), title: ''}\r\n ];\r\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n"
+                },
+                {
+                    "date": 1650297901349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,41 +3,64 @@\n import {colors, fonts} from '../../styles/typography';\r\n \r\n const array1 = [\r\n   {\r\n-    img: require('../../assets/image/icon/tao_don.png'),title: 'Tạo đơn '},\r\n+    img: require('../../assets/image/icon/tao_don.png'),\r\n+    title: 'Tạo đơn ',\r\n+  },\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n ];\r\n const array2 = [\r\n   {\r\n-    img: require('../../assets/image/icon/doanh_thu.png'),title: 'Doanh thu'},\r\n+    img: require('../../assets/image/icon/doanh_thu.png'),\r\n+    title: 'Doanh thu',\r\n+  },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n-  {img :require(''), title: ''}\r\n+  \r\n ];\r\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center', backgroundColor: colors.white, marginRight:40}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n+      <View\r\n+        style={{\r\n+          alignItems: 'center',\r\n+          backgroundColor: colors.white,\r\n+          marginRight: 40,\r\n+        }}>\r\n+        <Image\r\n+          source={item.img}\r\n+          resizeMode=\"contain\"\r\n+          style={{width: 60, height: 60}}\r\n+        />\r\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n   const renderItem2 = ({item, index}) => {\r\n     return (\r\n-      <View style={{alignItems: 'center', marginRight:40}}>\r\n-        <Image source={item.img} resizeMode=\"contain\" style={{width:60, height:60}}/>\r\n-        <Text style={{fontFamily:fonts.normal,}}>{item.title}</Text>\r\n+      <View style={{alignItems: 'center', marginRight: 40}}>\r\n+        <Image\r\n+          source={item.img}\r\n+          resizeMode=\"contain\"\r\n+          style={{width: 60, height: 60}}\r\n+        />\r\n+        <Text style={{fontFamily: fonts.normal}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n \r\n   return (\r\n     <View\r\n-      style={{flex: 1, backgroundColor: colors.white, alignItems: 'center', justifyContent: 'center', paddingHorizontal:18}}>\r\n+      style={{\r\n+        flex: 1,\r\n+        backgroundColor: colors.white,\r\n+        alignItems: 'center',\r\n+        justifyContent: 'center',\r\n+        paddingHorizontal: 18,\r\n+      }}>\r\n       <FlatList\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n"
+                },
+                {
+                    "date": 1650371467877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,17 +9,14 @@\n   },\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n-];\r\n-const array2 = [\r\n   {\r\n     img: require('../../assets/image/icon/doanh_thu.png'),\r\n     title: 'Doanh thu',\r\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n-  \r\n ];\r\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n@@ -37,20 +34,9 @@\n         <Text>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n-  const renderItem2 = ({item, index}) => {\r\n-    return (\r\n-      <View style={{alignItems: 'center', marginRight: 40}}>\r\n-        <Image\r\n-          source={item.img}\r\n-          resizeMode=\"contain\"\r\n-          style={{width: 60, height: 60}}\r\n-        />\r\n-        <Text style={{fontFamily: fonts.normal}}>{item.title}</Text>\r\n-      </View>\r\n-    );\r\n-  };\r\n+ \r\n \r\n   return (\r\n     <View\r\n       style={{\r\n@@ -65,16 +51,11 @@\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n         showsVerticalScrollIndicator={false}\r\n         horizontal={true}\r\n+        numColumns={4}\r\n       />\r\n-      <FlatList\r\n-        data={array2}\r\n-        showsHorizontalScrollIndicator={true}\r\n-        showsVerticalScrollIndicator={true}\r\n-        horizontal={true}\r\n-        renderItem={renderItem2}\r\n-      />\r\n+      \r\n     </View>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1650371920980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n const FlatListHome = () => {\r\n-  const renderItem1 = ({item, index}) => {\r\n+  const renderItem1 = () => {\r\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n@@ -47,13 +47,14 @@\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n         data={array1}\r\n-        renderItem={renderItem1}\r\n+        renderItem={({item, index})=>renderItem1 ={item.img}/>}\r\n         showsHorizontalScrollIndicator={false}\r\n         showsVerticalScrollIndicator={false}\r\n-        horizontal={true}\r\n         numColumns={4}\r\n+        \r\n+        key={index}\r\n       />\r\n       \r\n     </View>\r\n   );\r\n"
+                },
+                {
+                    "date": 1650374459209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n const FlatListHome = () => {\r\n-  const renderItem1 = () => {\r\n+  const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n@@ -47,13 +47,12 @@\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n         data={array1}\r\n-        renderItem={({item, index})=>renderItem1 ={item.img}/>}\r\n+        renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n         showsVerticalScrollIndicator={false}\r\n         numColumns={4}\r\n-        \r\n         key={index}\r\n       />\r\n       \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1650374830703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,8 @@\n         renderItem={renderItem1}\r\n         showsHorizontalScrollIndicator={false}\r\n         showsVerticalScrollIndicator={false}\r\n         numColumns={4}\r\n-        key={index}\r\n       />\r\n       \r\n     </View>\r\n   );\r\n"
+                },
+                {
+                    "date": 1650374883526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,10 +48,8 @@\n       }}>\r\n       <FlatList\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n-        showsHorizontalScrollIndicator={false}\r\n-        showsVerticalScrollIndicator={false}\r\n         numColumns={4}\r\n       />\r\n       \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1650374936476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   return (\r\n     <View\r\n       style={{\r\n         flex: 1,\r\n-        backgroundColor: colors.white,\r\n+        backgroundColor: colors.red,\r\n         alignItems: 'center',\r\n         justifyContent: 'center',\r\n         paddingHorizontal: 18,\r\n       }}>\r\n"
+                },
+                {
+                    "date": 1650374959828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: colors.white,\r\n-          marginRight: 40,\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650374976811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n-          backgroundColor: colors.white,\r\n+          backgroundColor: colors.white\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650374990149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,9 @@\n         justifyContent: 'center',\r\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n+      style={{backgroundColor: 'green'}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650374997564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         justifyContent: 'center',\r\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n-      style={{backgroundColor: 'green'}}\r\n+      style={{backgroundColor: 'green', flex: 1}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650375007925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         justifyContent: 'center',\r\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n-      style={{backgroundColor: 'green', flex: 1}}\r\n+      style={{backgroundColor: 'green', width: '100%'}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650375013680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         justifyContent: 'center',\r\n         paddingHorizontal: 18,\r\n       }}>\r\n       <FlatList\r\n-      style={{backgroundColor: 'green', width: '100%'}}\r\n+        style={{backgroundColor: 'green', width: '100%'}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650375020381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,9 @@\n       style={{\r\n         flex: 1,\r\n         backgroundColor: colors.red,\r\n         alignItems: 'center',\r\n-        justifyContent: 'center',\r\n-        paddingHorizontal: 18,\r\n+        justifyContent: 'center'\r\n       }}>\r\n       <FlatList\r\n         style={{backgroundColor: 'green', width: '100%'}}\r\n         data={array1}\r\n"
+                },
+                {
+                    "date": 1650375042086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n-          backgroundColor: colors.white\r\n+          backgroundColor: colors.white,\r\n+          with: '25%'\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375083079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\r\n-import {FlatList, View, Image, Text} from 'react-native';\r\n+import {FlatList, View, Image, Text, Dimensions} from 'react-native';\r\n import {colors, fonts} from '../../styles/typography';\r\n \r\n+const { width } = Dimensions.get('screen');\r\n+\r\n const array1 = [\r\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n     title: 'Tạo đơn ',\r\n@@ -23,9 +25,9 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: colors.white,\r\n-          with: '25%'\r\n+          with: width*0.25\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375101823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n-          backgroundColor: colors.white,\r\n+          backgroundColor: 'yellow',\r\n           with: width*0.25\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n"
+                },
+                {
+                    "date": 1650375110178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          with: width*0.25\r\n+          with: width*0.5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375133515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          with: width*0.5\r\n+          with: width*0.5,\r\n+          height: width*0.5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375142554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,9 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          with: width*0.5,\r\n-          height: width*0.5\r\n+          with: width*0.5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375159096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          with: width*0.5\r\n+          width: 100\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375168860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          width: 100\r\n+          width: width*0.23\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375251212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         alignItems: 'center',\r\n         justifyContent: 'center'\r\n       }}>\r\n       <FlatList\r\n-        style={{backgroundColor: 'green', width: '100%'}}\r\n+        style={{backgroundColor: colors.white, width: '100%'}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1650375309235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n import {FlatList, View, Image, Text, Dimensions} from 'react-native';\r\n import {colors, fonts} from '../../styles/typography';\r\n \r\n-const { width } = Dimensions.get('screen');\r\n+const { width, height } = Dimensions.get('screen');\r\n \r\n const array1 = [\r\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n@@ -25,9 +25,10 @@\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n-          width: width*0.23\r\n+          width: width*0.23,\r\n+          height: height* 0.5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375324692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n           width: width*0.23,\r\n-          height: height* 0.5\r\n+          \r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375373308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n           width: width*0.23,\r\n-          \r\n+          margintop: 5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375385709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n           width: width*0.23,\r\n-          margintop: 5\r\n+          marginTop:5\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375398717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         style={{\r\n           alignItems: 'center',\r\n           backgroundColor: 'yellow',\r\n           width: width*0.23,\r\n-          marginTop:5\r\n+          marginTop:10\r\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1650375415949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     return (\r\n       <View\r\n         style={{\r\n           alignItems: 'center',\r\n-          backgroundColor: 'yellow',\r\n+          backgroundColor: colors.white,\r\n           width: width*0.23,\r\n           marginTop:10\r\n         }}>\r\n         <Image\r\n"
+                },
+                {
+                    "date": 1650386356176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\r\n import {FlatList, View, Image, Text, Dimensions} from 'react-native';\r\n-import {colors, fonts} from '../../styles/typography';\r\n+import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const { width, height } = Dimensions.get('screen');\r\n \r\n const array1 = [\r\n@@ -33,9 +33,9 @@\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n           style={{width: 60, height: 60}}\r\n         />\r\n-        <Text>{item.title}</Text>\r\n+        <Text style={{fontFamily:fonts.bold, color:colors.black, fontSize:fontSize[14]}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n  \r\n"
+                },
+                {
+                    "date": 1650464164133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n-          style={{width: 60, height: 60}}\r\n+          style={{width: 40, height: 40}}\r\n         />\r\n         <Text style={{fontFamily:fonts.bold, color:colors.black, fontSize:fontSize[14]}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n"
+                },
+                {
+                    "date": 1650464178577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n         }}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n-          style={{width: 40, height: 40}}\r\n+          style={{width: 50, height: 50}}\r\n         />\r\n         <Text style={{fontFamily:fonts.bold, color:colors.black, fontSize:fontSize[14]}}>{item.title}</Text>\r\n       </View>\r\n     );\r\n"
+                },
+                {
+                    "date": 1650906181057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\r\n import {FlatList, View, Image, Text, Dimensions} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n+import Styles from './Styles';\r\n \r\n const { width, height } = Dimensions.get('screen');\r\n \r\n const array1 = [\r\n@@ -22,20 +23,15 @@\n const FlatListHome = () => {\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View\r\n-        style={{\r\n-          alignItems: 'center',\r\n-          backgroundColor: colors.white,\r\n-          width: width*0.23,\r\n-          marginTop:10\r\n-        }}>\r\n+        style={Styles.container_FlatlistHome}>\r\n         <Image\r\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n-          style={{width: 50, height: 50}}\r\n+          style={Styles.boxStyles}\r\n         />\r\n-        <Text style={{fontFamily:fonts.bold, color:colors.black, fontSize:fontSize[14]}}>{item.title}</Text>\r\n+        <Text style={Styles.txtBtnBottom}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n  \r\n"
+                },
+                {
+                    "date": 1650906228061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n           source={item.img}\r\n           resizeMode=\"contain\"\r\n           style={Styles.boxStyles}\r\n         />\r\n-        <Text style={Styles.txtBtnBottom}>{item.title}</Text>\r\n+        <Text style={Styles.txtBox}>{item.title}</Text>\r\n       </View>\r\n     );\r\n   };\r\n  \r\n"
+                },
+                {
+                    "date": 1650906251296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   return (\r\n     <View\r\n       style={{\r\n         flex: 1,\r\n-        backgroundColor: colors.red,\r\n+        backgroundColor: colors.white,\r\n         alignItems: 'center',\r\n         justifyContent: 'center'\r\n       }}>\r\n       <FlatList\r\n"
+                },
+                {
+                    "date": 1650906294432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,14 +37,9 @@\n  \r\n \r\n   return (\r\n     <View\r\n-      style={{\r\n-        flex: 1,\r\n-        backgroundColor: colors.white,\r\n-        alignItems: 'center',\r\n-        justifyContent: 'center'\r\n-      }}>\r\n+      style={Styles.container_Flalist1}>\r\n       <FlatList\r\n         style={{backgroundColor: colors.white, width: '100%'}}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n"
+                },
+                {
+                    "date": 1650906348325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   return (\r\n     <View\r\n       style={Styles.container_Flalist1}>\r\n       <FlatList\r\n-        style={{backgroundColor: colors.white, width: '100%'}}\r\n+        style={Styles.flatListStyles}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                }
+            ],
+            "date": 1650290278452,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport { FlatList, View, Image,Text } from \"react-native\";\r\nimport { colors,fonts } from \"../../styles/typography\";\r\n\r\n\r\nconst array1=[{\r\n img: require('../../assets/image/icon/tao_don.png') ,title:\"Tạo đơn \"},\r\n{img: require('../../assets/image/icon/don_hang.png'),title: \"Đơn hàng\"},\r\n{img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n{img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'}]\r\n\r\nconst FlatListHome=()=>{\r\n\r\nconst renderItem=({item, index})=>{\r\n    return(\r\n        <View style={{alignItems: 'center'}}>\r\n         <Image source={item.img} resizeMode=\"contain\"/>\r\n         <Text>{item.title}</Text>\r\n        </View>\r\n    )\r\n}\r\n\r\n\r\n\r\n    return(\r\n<View style={{flex:1, backgroundColor: colors.white}}>\r\n<FlatList \r\n       data={array1}\r\n       renderItem={renderItem}\r\n       showsHorizontalScrollIndicator={false}\r\n       showsVerticalScrollIndicator={false}\r\n       horizontal={true}/>\r\n</View>\r\n    )\r\n}\r\n\r\nexport default FlatListHome"
+        }
+    ]
+}

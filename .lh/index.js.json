@@ -1,0 +1,30 @@
+{
+    "sourceFile": "index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1649861082136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649861120983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n  * @format\n  */\n \n import {AppRegistry} from 'react-native';\n-import App from './src/App';\n+import App from './src/App.jsx';\n import {name as appName} from './app.json';\n \n AppRegistry.registerComponent(appName, () => App);\n"
+                },
+                {
+                    "date": 1649861160214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n  * @format\n  */\n \n import {AppRegistry} from 'react-native';\n-import App from './src/App.jsx';\n+import App from './src/App.js';\n import {name as appName} from './app.json';\n \n AppRegistry.registerComponent(appName, () => App);\n"
+                },
+                {
+                    "date": 1649861291436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n  * @format\n  */\n \n import {AppRegistry} from 'react-native';\n-import App from './src/App.js';\n+import App from './src/App';\n import {name as appName} from './app.json';\n \n AppRegistry.registerComponent(appName, () => App);\n"
+                }
+            ],
+            "date": 1649861082136,
+            "name": "Commit-0",
+            "content": "/**\n * @format\n */\n\nimport {AppRegistry} from 'react-native';\nimport App from './src/App';\nimport {name as appName} from './app.json';\n\nAppRegistry.registerComponent(appName, () => App);\n"
+        }
+    ]
+}

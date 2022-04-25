@@ -1,0 +1,18 @@
+{
+    "sourceFile": "jest.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1649862858128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1649862858128,
+            "name": "Commit-0",
+            "content": "module.exports={\r\n    preset: 'react-native',\r\n    moduleFileExtension:['ts','tsx','js','jsx','json','node']\r\n};"
+        }
+    ]
+}
