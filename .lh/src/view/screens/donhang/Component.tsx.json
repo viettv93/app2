@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/view/screens/donhang/Component.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1651420295884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1651420295884,
+            "name": "Commit-0",
+            "content": "\r\nimport React from \"react\"\r\nimport { View } from \"react-native\"\r\nimport { colors } from \"../../styles/typography\"\r\n\r\nconst Don_Hang=()=>{\r\n    return(\r\n        <View style={{flex:1, backgroundColor: colors.orange}}>\r\n\r\n        </View>\r\n    )\r\n}\r\nexport default Don_Hang"
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "sourceFile": "src/view/screens/taoDon/Trongnuoc.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1651422813724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651499828096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,8 @@\n-import React from \"react\"\r\n-import { View } from 'react-native'\r\n-import { colors } from \"../../styles/typography\"\r\n+import React from 'react';\r\n+import {View} from 'react-native';\r\n+import {colors} from '../../styles/typography';\r\n \r\n-\r\n-const Domestic=()=>{\r\n-return(\r\n-    <View style={{flex:1, backgroundColor: colors.red}}>\r\n-\r\n-    </View>\r\n-)\r\n-}\r\n-export default Domestic\r\n+const Domestic = () => {\r\n+  return <View style={{flex: 1, backgroundColor: colors.red}}></View>;\r\n+};\r\n+export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651500851699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n import {View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n-  return <View style={{flex: 1, backgroundColor: colors.red}}></View>;\r\n+  return <View style={{flex: 1, backgroundColor: colors.orange}}></View>;\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651501022672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from 'react';\r\n-import {View} from 'react-native';\r\n+import {Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n-  return <View style={{flex: 1, backgroundColor: colors.orange}}></View>;\r\n+  return <View style={{flex: 1, backgroundColor: colors.orange}}>\r\n+      <Text>\r\n+          aaaaaaaaaaaaaaa\r\n+      </Text>\r\n+  </View>;\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651501065601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import {Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n-  return <View style={{flex: 1, backgroundColor: colors.orange}}>\r\n+  return <View style={{flex: 1, backgroundColor: colors.white}}>\r\n       <Text>\r\n           aaaaaaaaaaaaaaa\r\n       </Text>\r\n   </View>;\r\n"
+                },
+                {
+                    "date": 1651501211174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,10 @@\n import React from 'react';\r\n-import {Text, View} from 'react-native';\r\n+import {Image, Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return <View style={{flex: 1, backgroundColor: colors.white}}>\r\n-      <Text>\r\n-          aaaaaaaaaaaaaaa\r\n-      </Text>\r\n+      <Text>aaaaenfefb</Text>\r\n   </View>;\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651501541210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,10 @@\n \r\n const Domestic = () => {\r\n   return <View style={{flex: 1, backgroundColor: colors.white}}>\r\n       <Text>aaaaenfefb</Text>\r\n+      <Text>aaaaenfefb</Text>\r\n+      <Text>aaaaenfefb</Text>\r\n+      <Text>aaaaenfefb</Text>\r\n   </View>;\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651501595598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,14 @@\n import {Image, Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n-  return <View style={{flex: 1, backgroundColor: colors.white}}>\r\n+  return (\r\n+    <View style={{flex: 1, backgroundColor: colors.white}}>\r\n       <Text>aaaaenfefb</Text>\r\n       <Text>aaaaenfefb</Text>\r\n       <Text>aaaaenfefb</Text>\r\n       <Text>aaaaenfefb</Text>\r\n-  </View>;\r\n+    </View>\r\n+  );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651502057641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\r\n-import {Image, Text, View} from 'react-native';\r\n+import { Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1651502209180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,10 @@\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n-    <View style={{flex: 1, backgroundColor: colors.white}}>\r\n-      <Text>aaaaenfefb</Text>\r\n-      <Text>aaaaenfefb</Text>\r\n-      <Text>aaaaenfefb</Text>\r\n-      <Text>aaaaenfefb</Text>\r\n-    </View>\r\n+   <View style={{flex:1, backgroundColor: 'white'}}>\r\n+\r\n+   </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651502474775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const Domestic = () => {\r\n   return (\r\n    <View style={{flex:1, backgroundColor: 'white'}}>\r\n-\r\n+<Text>kcigfwg</Text>\r\n    </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651502532300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n-   <View style={{flex:1, backgroundColor: 'white'}}>\r\n+   <View style={{ backgroundColor: 'white'}}>\r\n <Text>kcigfwg</Text>\r\n    </View>\r\n   );\r\n };\r\n"
+                },
+                {
+                    "date": 1651502687971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react';\r\n-import { Text, View} from 'react-native';\r\n+import {Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n-   <View style={{ backgroundColor: 'white'}}>\r\n-<Text>kcigfwg</Text>\r\n-   </View>\r\n+    <View style={{backgroundColor: 'white', flex:1}}>\r\n+      <Text>kcigfwg</Text>\r\n+    </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651502700559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,11 @@\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n       <Text>kcigfwg</Text>\r\n+      <Text>\r\n+        epfkjefjefj9\r\n+      </Text>\r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651503452431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,9 @@\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n-      <Text>kcigfwg</Text>\r\n-      <Text>\r\n-        epfkjefjefj9\r\n-      </Text>\r\n+      <View style={{flexDirection: 'row', alignItems: 'center'}}></View>\r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651503614941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,15 @@\n import React from 'react';\r\n-import {Text, View} from 'react-native';\r\n+import {Image, Text, View} from 'react-native';\r\n import {colors} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n-      <View style={{flexDirection: 'row', alignItems: 'center'}}></View>\r\n+      <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+        <Text>Người gửi - người nhận</Text>\r\n+        <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n+      </View>\r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651503685701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import React from 'react';\r\n import {Image, Text, View} from 'react-native';\r\n-import {colors} from '../../styles/typography';\r\n+import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n       <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-        <Text>Người gửi - người nhận</Text>\r\n+        <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>Người gửi - người nhận</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n     </View>\r\n   );\r\n"
+                },
+                {
+                    "date": 1651503732355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n       <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-        <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>Người gửi - người nhận</Text>\r\n+        <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n     </View>\r\n   );\r\n"
+                },
+                {
+                    "date": 1651503751635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n-      <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+      <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'space-around'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651503764255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n-      <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'space-around'}}>\r\n+      <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'space-between'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651503781969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1}}>\r\n-      <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'space-between'}}>\r\n+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651503800723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n-    <View style={{backgroundColor: 'white', flex:1}}>\r\n+    <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n"
+                },
+                {
+                    "date": 1651503869704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,16 @@\n import React from 'react';\r\n-import {Image, Text, View} from 'react-native';\r\n+import {Image, Text, TouchableOpacity, View} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n+        <TouchableOpacity onPress={()=>{}}>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n+        </TouchableOpacity>\r\n       </View>\r\n     </View>\r\n   );\r\n };\r\n"
+                },
+                {
+                    "date": 1651504192032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n import React from 'react';\r\n-import {Image, Text, TouchableOpacity, View} from 'react-native';\r\n+import {Image, Text, Touchable, TouchableOpacity, View} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n+     <TouchableOpacity>\r\n+     <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n-        <TouchableOpacity onPress={()=>{}}>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n-        </TouchableOpacity>\r\n       </View>\r\n+     </TouchableOpacity>\r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651505164027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\r\n-import {Image, Text, Touchable, TouchableOpacity, View} from 'react-native';\r\n-import {colors, fonts, fontSize} from '../../styles/typography';\r\n+import {Image, Modal, Text, TouchableOpacity, View} from 'react-native';\r\n+import {colors, fonts, fontSize} from '../../styles/typography'\r\n+import Icon from 'react-native-vector-icons/MaterialIcons'\r\n \r\n+\r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n      <TouchableOpacity>\r\n@@ -10,8 +12,20 @@\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n      </TouchableOpacity>\r\n+     <Modal style={{width: '100%', height: '50%'}}>\r\n+          <View style={{flex:1, backgroundColor: colors.white}}>\r\n+            <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+              <Text>Người gửi</Text>\r\n+              \r\n+             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+               <Icon name='check-box-outline-blank' size={30} color= {colors.black} />\r\n+             <Text>Gửi tại bưu cục</Text>\r\n+             </View>\r\n+            </View>\r\n+          </View>\r\n+     </Modal>\r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651505796403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n              <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-               <Icon name='check-box-outline-blank' size={30} color= {colors.black} />\r\n+               \r\n              <Text>Gửi tại bưu cục</Text>\r\n              </View>\r\n             </View>\r\n           </View>\r\n"
+                },
+                {
+                    "date": 1651505804363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n import {Image, Modal, Text, TouchableOpacity, View} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography'\r\n-import Icon from 'react-native-vector-icons/MaterialIcons'\r\n \r\n \r\n+\r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n      <TouchableOpacity>\r\n"
+                },
+                {
+                    "date": 1651505850358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n      </TouchableOpacity>\r\n-     <Modal style={{width: '100%', height: '50%'}}>\r\n+     <Modal style={{width: '100%', height: '50%'}} visible ={false}>\r\n           <View style={{flex:1, backgroundColor: colors.white}}>\r\n             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n"
+                },
+                {
+                    "date": 1651505875187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n      </TouchableOpacity>\r\n-     <Modal style={{width: '100%', height: '50%'}} visible ={false}>\r\n+     <Modal style={{width: '100%', height: '50%'}} visible ={true}>\r\n           <View style={{flex:1, backgroundColor: colors.white}}>\r\n             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n"
+                },
+                {
+                    "date": 1651505920682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <Text style={{fontFamily:fonts.bold, fontSize:fontSize[14], color:colors.gray}}>NGƯỜI GỬI - NGƯỜI NHẬN</Text>\r\n         <Image source={require('../../assets/image/icon/down.png')} resizeMode='contain'/>\r\n       </View>\r\n      </TouchableOpacity>\r\n-     <Modal style={{width: '100%', height: '50%'}} visible ={true}>\r\n+     \r\n           <View style={{flex:1, backgroundColor: colors.white}}>\r\n             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n@@ -23,9 +23,9 @@\n              <Text>Gửi tại bưu cục</Text>\r\n              </View>\r\n             </View>\r\n           </View>\r\n-     </Modal>\r\n+     \r\n     </View>\r\n   );\r\n };\r\n export default Domestic;\r\n"
+                },
+                {
+                    "date": 1651506027066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n import {Image, Modal, Text, TouchableOpacity, View} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography'\r\n+import Icon from 'react-native-vector-icons/MaterialIcons'\r\n \r\n \r\n-\r\n const Domestic = () => {\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex:1, paddingHorizontal: 18}}>\r\n      <TouchableOpacity>\r\n@@ -18,9 +18,9 @@\n             <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n              <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-               \r\n+               <Icon name='check-box-outline-blank' size ={20} />\r\n              <Text>Gửi tại bưu cục</Text>\r\n              </View>\r\n             </View>\r\n           </View>\r\n"
+                },
+                {
+                    "date": 1651506048597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       </View>\r\n      </TouchableOpacity>\r\n      \r\n           <View style={{flex:1, backgroundColor: colors.white}}>\r\n-            <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n              <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n                <Icon name='check-box-outline-blank' size ={20} />\r\n"
+                },
+                {
+                    "date": 1651506060988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       </View>\r\n      </TouchableOpacity>\r\n      \r\n           <View style={{flex:1, backgroundColor: colors.white}}>\r\n-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly'}}>\r\n+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n              <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n                <Icon name='check-box-outline-blank' size ={20} />\r\n"
+                },
+                {
+                    "date": 1651507378294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React from 'react';\r\n import {Image, Modal, Text, TouchableOpacity, View} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography'\r\n-import Icon from 'react-native-vector-icons/MaterialIcons'\r\n \r\n \r\n const Domestic = () => {\r\n   return (\r\n@@ -18,9 +17,9 @@\n             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>\r\n               <Text>Người gửi</Text>\r\n               \r\n              <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-               <Icon name='check-box-outline-blank' size ={20} />\r\n+               \r\n              <Text>Gửi tại bưu cục</Text>\r\n              </View>\r\n             </View>\r\n           </View>\r\n"
+                }
+            ],
+            "date": 1651422813724,
+            "name": "Commit-0",
+            "content": "import React from \"react\"\r\nimport { View } from 'react-native'\r\nimport { colors } from \"../../styles/typography\"\r\n\r\n\r\nconst Domestic=()=>{\r\nreturn(\r\n    <View style={{flex:1, backgroundColor: colors.red}}>\r\n\r\n    </View>\r\n)\r\n}\r\nexport default Domestic\r\n"
+        }
+    ]
+}

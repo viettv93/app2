@@ -1,6 +1,5 @@
 import React from 'react';
 import {View} from 'react-native';
-import {colors} from './view/styles/typography';
 import BottomTabHome from './navigators/home_bottomtab';
 
 const App = () => {
@@ -8,6 +7,7 @@ const App = () => {
     <View style={{flex: 1}}>
        
       <BottomTabHome />
+      
     </View>
   );
 };

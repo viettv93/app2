@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/navigators/TaoDon_TopTab.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1651416692458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651417088865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\r\n-import {Image, Text, View} from 'react-native';\r\n+import { View} from 'react-native';\r\n import {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\n import {colors} from '../view/styles/typography';\r\n \r\n const Tabs = createMaterialTopTabNavigator();\r\n"
+                },
+                {
+                    "date": 1651422784403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import React from 'react';\r\n import { View} from 'react-native';\r\n import {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\n+import International from '../view/screens/taoDon/Quocte';\r\n+import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n \r\n const Tabs = createMaterialTopTabNavigator();\r\n function TaoDon_TopTab(params: any) {\r\n@@ -14,9 +16,9 @@\n       }}>\r\n       <Tab.Navigator>\r\n         <Tab.Screen\r\n           name=\"Trong nước\"\r\n-          component={TrongNuoc}\r\n+          component={Domestic}\r\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n@@ -24,9 +26,9 @@\n           }}\r\n         />\r\n         <Tab.Screen\r\n           name=\"Quốc tế\"\r\n-          component={Quocte}\r\n+          component={International}\r\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n"
+                },
+                {
+                    "date": 1651423261208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,11 @@\n import International from '../view/screens/taoDon/Quocte';\r\n import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n \r\n-const Tabs = createMaterialTopTabNavigator();\r\n-function TaoDon_TopTab(params: any) {\r\n+\r\n+const TaoDon_TopTab= (params: any)=> {\r\n+  const Tabs = createMaterialTopTabNavigator();\r\n   return (\r\n     <View\r\n       style={{\r\n         flexDirection: 'row',\r\n"
+                },
+                {
+                    "date": 1651423306718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import {colors} from '../view/styles/typography';\r\n \r\n \r\n const TaoDon_TopTab= (params: any)=> {\r\n-  const Tabs = createMaterialTopTabNavigator();\r\n+  const Tab = createMaterialTopTabNavigator();\r\n   return (\r\n     <View\r\n       style={{\r\n         flexDirection: 'row',\r\n"
+                },
+                {
+                    "date": 1651423584653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n import {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\n import International from '../view/screens/taoDon/Quocte';\r\n import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n+const Tab = createMaterialTopTabNavigator()\r\n \r\n-\r\n-const TaoDon_TopTab= (params: any)=> {\r\n-  const Tab = createMaterialTopTabNavigator();\r\n+const TaoDon_TopTab = (params: any)=> {\r\n+  ;\r\n   return (\r\n     <View\r\n       style={{\r\n         flexDirection: 'row',\r\n"
+                },
+                {
+                    "date": 1651423626354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n import {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\n import International from '../view/screens/taoDon/Quocte';\r\n import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n-const Tab = createMaterialTopTabNavigator()\r\n+  const Tab = createMaterialTopTabNavigator()\r\n \r\n-const TaoDon_TopTab = (params: any)=> {\r\n-  ;\r\n+function TaoDon_TopTab (params: any) {\r\n+  \r\n   return (\r\n     <View\r\n       style={{\r\n         flexDirection: 'row',\r\n"
+                },
+                {
+                    "date": 1651423756822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\r\n import { View} from 'react-native';\r\n-import {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\n+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'\r\n import International from '../view/screens/taoDon/Quocte';\r\n import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n   const Tab = createMaterialTopTabNavigator()\r\n"
+                },
+                {
+                    "date": 1651424758031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\r\n import { View} from 'react-native';\r\n-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'\r\n+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n import International from '../view/screens/taoDon/Quocte';\r\n import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors} from '../view/styles/typography';\r\n-  const Tab = createMaterialTopTabNavigator()\r\n+const Tab = createMaterialTopTabNavigator();\r\n \r\n function TaoDon_TopTab (params: any) {\r\n   \r\n   return (\r\n"
+                },
+                {
+                    "date": 1651499961599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,7 @@\n       </Tab.Navigator>\r\n     </View>\r\n   );\r\n }\r\n+\r\n+\r\n export default TaoDon_TopTab;\r\n"
+                },
+                {
+                    "date": 1651501641410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n+            tabBarStyle: {height: 40},\r\n           }}\r\n         />\r\n         <Tab.Screen\r\n           name=\"Quốc tế\"\r\n@@ -32,9 +32,9 @@\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n+            tabBarStyle: {height: 40},\r\n           }}\r\n         />\r\n       </Tab.Navigator>\r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651501652857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 40},\r\n+            tabBarStyle: {height: 50},\r\n           }}\r\n         />\r\n         <Tab.Screen\r\n           name=\"Quốc tế\"\r\n@@ -32,9 +32,9 @@\n           options={{\r\n             headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 40},\r\n+            tabBarStyle: {height: 50},\r\n           }}\r\n         />\r\n       </Tab.Navigator>\r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651501677128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         <Tab.Screen\r\n           name=\"Quốc tế\"\r\n           component={International}\r\n           options={{\r\n-            headerShown: false,\r\n+            headerShown: true,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n             tabBarStyle: {height: 50},\r\n           }}\r\n"
+                },
+                {
+                    "date": 1651501784637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         <Tab.Screen\r\n           name=\"Quốc tế\"\r\n           component={International}\r\n           options={{\r\n-            headerShown: true,\r\n+            headerShown: false,\r\n             tabBarActiveTintColor: colors.red,\r\n             tabBarInactiveTintColor: colors.gray,\r\n             tabBarStyle: {height: 50},\r\n           }}\r\n"
+                },
+                {
+                    "date": 1651502388726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,45 +0,0 @@\n-import React from 'react';\r\n-import { View} from 'react-native';\r\n-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n-import International from '../view/screens/taoDon/Quocte';\r\n-import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n-import {colors} from '../view/styles/typography';\r\n-const Tab = createMaterialTopTabNavigator();\r\n-\r\n-function TaoDon_TopTab (params: any) {\r\n-  \r\n-  return (\r\n-    <View\r\n-      style={{\r\n-        flexDirection: 'row',\r\n-        backgroundColor: colors.white,\r\n-        alignItems: 'center',\r\n-      }}>\r\n-      <Tab.Navigator>\r\n-        <Tab.Screen\r\n-          name=\"Trong nước\"\r\n-          component={Domestic}\r\n-          options={{\r\n-            headerShown: false,\r\n-            tabBarActiveTintColor: colors.red,\r\n-            tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n-          }}\r\n-        />\r\n-        <Tab.Screen\r\n-          name=\"Quốc tế\"\r\n-          component={International}\r\n-          options={{\r\n-            headerShown: false,\r\n-            tabBarActiveTintColor: colors.red,\r\n-            tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n-          }}\r\n-        />\r\n-      </Tab.Navigator>\r\n-    </View>\r\n-  );\r\n-}\r\n-\r\n-\r\n-export default TaoDon_TopTab;\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1651416692458,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport {Image, Text, View} from 'react-native';\r\nimport {createMaterialTopTabNavigator} from 'react-navigation-tabs';\r\nimport {colors} from '../view/styles/typography';\r\n\r\nconst Tabs = createMaterialTopTabNavigator();\r\nfunction TaoDon_TopTab(params: any) {\r\n  return (\r\n    <View\r\n      style={{\r\n        flexDirection: 'row',\r\n        backgroundColor: colors.white,\r\n        alignItems: 'center',\r\n      }}>\r\n      <Tab.Navigator>\r\n        <Tab.Screen\r\n          name=\"Trong nước\"\r\n          component={TrongNuoc}\r\n          options={{\r\n            headerShown: false,\r\n            tabBarActiveTintColor: colors.red,\r\n            tabBarInactiveTintColor: colors.gray,\r\n            tabBarStyle: {height: 50},\r\n          }}\r\n        />\r\n        <Tab.Screen\r\n          name=\"Quốc tế\"\r\n          component={Quocte}\r\n          options={{\r\n            headerShown: false,\r\n            tabBarActiveTintColor: colors.red,\r\n            tabBarInactiveTintColor: colors.gray,\r\n            tabBarStyle: {height: 50},\r\n          }}\r\n        />\r\n      </Tab.Navigator>\r\n    </View>\r\n  );\r\n}\r\nexport default TaoDon_TopTab;\r\n"
+        }
+    ]
+}

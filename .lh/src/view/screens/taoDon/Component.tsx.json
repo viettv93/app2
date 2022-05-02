@@ -1,0 +1,190 @@
+{
+    "sourceFile": "src/view/screens/taoDon/Component.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 43,
+            "patches": [
+                {
+                    "date": 1651412851616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651415185211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n \r\n const TaoDon =()=>{\r\n  return(\r\n-     <View style={{flex:1, backgroundColor: colors.blue}}></View>\r\n+     <View style={{flex:1, backgroundColor: colors.red}}></View>\r\n  )\r\n }\r\n \r\n export default TaoDon\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651417889891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,18 @@\n import React from \"react\"\r\n-import { View } from 'react-native'\r\n+import { View, Image } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n const TaoDon =()=>{\r\n  return(\r\n-     <View style={{flex:1, backgroundColor: colors.red}}></View>\r\n+     <View style={{flex:1, backgroundColor: colors.white}}>\r\n+        <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+            {/* <Image /> */}\r\n+        </View> \r\n+\r\n+\r\n+     </View>\r\n  )\r\n }\r\n \r\n export default TaoDon\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651418051971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { View, Image } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n-const TaoDon =()=>{\r\n+const TaoDon =({navigation})=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n"
+                },
+                {
+                    "date": 1651418381276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { View, Image } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n-const TaoDon =({navigation})=>{\r\n+const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n"
+                },
+                {
+                    "date": 1651418865161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n-import React from \"react\"\r\n-import { View, Image } from 'react-native'\r\n+import React, { useEffect } from \"react\"\r\n+import { View, Image, Alert } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n-const TaoDon =()=>{\r\n+const TaoDon =({navigation})=>{\r\n+    useEffect(() => {\r\n+     alert(JSON.stringify(navigation))   \r\n+    })\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n"
+                },
+                {
+                    "date": 1651418873439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,8 @@\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n const TaoDon =({navigation})=>{\r\n-    useEffect(() => {\r\n-     alert(JSON.stringify(navigation))   \r\n-    })\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n"
+                },
+                {
+                    "date": 1651419072070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n import React, { useEffect } from \"react\"\r\n-import { View, Image, Alert } from 'react-native'\r\n+import { View, Image, Alert, Text } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n const TaoDon =({navigation})=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n+            <Text>{'dsadsadsd'}</Text>\r\n         </View> \r\n \r\n \r\n      </View>\r\n"
+                },
+                {
+                    "date": 1651419082513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n-            <Text>{'dsadsadsd'}</Text>\r\n+            <Text>{JSON.stringify(navigation)}</Text>\r\n         </View> \r\n \r\n \r\n      </View>\r\n"
+                },
+                {
+                    "date": 1651419267196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n import React, { useEffect } from \"react\"\r\n-import { View, Image, Alert, Text } from 'react-native'\r\n+import { View, Image, Alert, Text, TouchableOpacity } from 'react-native'\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n const TaoDon =({navigation})=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n             {/* <Image /> */}\r\n-            <Text>{JSON.stringify(navigation)}</Text>\r\n+            <TouchableOpacity onPress={() => navigation.navigate(\"test\")}>\r\n+                <Text>CLICK ME</Text>\r\n+            </TouchableOpacity>\r\n         </View> \r\n \r\n \r\n      </View>\r\n"
+                },
+                {
+                    "date": 1651422337720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,18 @@\n import React, { useEffect } from \"react\"\r\n import { View, Image, Alert, Text, TouchableOpacity } from 'react-native'\r\n+import TaoDon_TopTab from \"../../../navigators/TaoDon_TopTab\"\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n const TaoDon =({navigation})=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-            {/* <Image /> */}\r\n-            <TouchableOpacity onPress={() => navigation.navigate(\"test\")}>\r\n-                <Text>CLICK ME</Text>\r\n-            </TouchableOpacity>\r\n+           <Image source={require('../../assets/image/img')}/>\r\n         </View> \r\n+      <TaoDon_TopTab/>   \r\n \r\n-\r\n      </View>\r\n  )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1651422439105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n \r\n \r\n const TaoDon =({navigation})=>{\r\n  return(\r\n-     <View style={{flex:1, backgroundColor: colors.white}}>\r\n+     <View style={{flex:1, backgroundColor: colors.red}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n-           <Image source={require('../../assets/image/img')}/>\r\n+           <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n+           <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n         </View> \r\n       <TaoDon_TopTab/>   \r\n \r\n      </View>\r\n"
+                },
+                {
+                    "date": 1651422832399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useEffect } from \"react\"\r\n-import { View, Image, Alert, Text, TouchableOpacity } from 'react-native'\r\n+import { View, Image, Text,} from 'react-native'\r\n import TaoDon_TopTab from \"../../../navigators/TaoDon_TopTab\"\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1651422864156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import TaoDon_TopTab from \"../../../navigators/TaoDon_TopTab\"\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n-const TaoDon =({navigation})=>{\r\n+const TaoDon =({})=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n"
+                },
+                {
+                    "date": 1651423107033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import TaoDon_TopTab from \"../../../navigators/TaoDon_TopTab\"\r\n import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n \r\n \r\n-const TaoDon =({})=>{\r\n+const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n"
+                },
+                {
+                    "date": 1651423131685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n \r\n const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+        {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n         </View> \r\n-      <TaoDon_TopTab/>   \r\n+      <TaoDon_TopTab/>    */}\r\n \r\n      </View>\r\n  )\r\n }\r\n"
+                },
+                {
+                    "date": 1651423177683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n         </View> \r\n       <TaoDon_TopTab/>    */}\r\n-\r\n+<TaoDon_TopTab/>\r\n      </View>\r\n  )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1651423372049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n \r\n const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+        <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n         </View> \r\n-      <TaoDon_TopTab/>    */}\r\n-<TaoDon_TopTab/>\r\n+      <TaoDon_TopTab/>   \r\n+     \r\n      </View>\r\n  )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1651500919413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,12 @@\n \r\n const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        <View style={{flexDirection: 'row', alignItems: 'center'}}>\r\n+        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent: 'space-between'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n+           <View style={{flex:1}}></View>\r\n         </View> \r\n       <TaoDon_TopTab/>   \r\n      \r\n      </View>\r\n"
+                },
+                {
+                    "date": 1651500977399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent: 'space-between'}}>\r\n+        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'space-evenly'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n            <View style={{flex:1}}></View>\r\n         </View> \r\n"
+                },
+                {
+                    "date": 1651501000501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n const TaoDon =()=>{\r\n  return(\r\n      <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'space-evenly'}}>\r\n+        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n            <View style={{flex:1}}></View>\r\n         </View> \r\n"
+                },
+                {
+                    "date": 1651501092098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n \r\n const TaoDon =()=>{\r\n  return(\r\n-     <View style={{flex:1, backgroundColor: colors.red}}>\r\n+     <View style={{flex:1, backgroundColor: colors.white}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n            <View style={{flex:1}}></View>\r\n"
+                },
+                {
+                    "date": 1651501105957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n \r\n const TaoDon =()=>{\r\n  return(\r\n-     <View style={{flex:1, backgroundColor: colors.white}}>\r\n+     <View style={{flex:1, backgroundColor: colors.red}}>\r\n         <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>\r\n            <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n            <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n            <View style={{flex:1}}></View>\r\n"
+                },
+                {
+                    "date": 1651501300076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,34 @@\n-import React, { useEffect } from \"react\"\r\n-import { View, Image, Text,} from 'react-native'\r\n-import TaoDon_TopTab from \"../../../navigators/TaoDon_TopTab\"\r\n-import { colors, fonts,fontSize } from \"../../styles/typography\"\r\n+import React, {useEffect} from 'react';\r\n+import {View, Image, Text} from 'react-native';\r\n+import TaoDon_TopTab from '../../../navigators/TaoDon_TopTab';\r\n+import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n+const TaoDon = () => {\r\n+  return (\r\n+    <View style={{flex: 1, backgroundColor: colors.red}}>\r\n+      <View\r\n+        style={{\r\n+          flexDirection: 'row',\r\n+          alignItems: 'center',\r\n+          justifyContent:'space-between',\r\n+        }}>\r\n+        <Image\r\n+          source={require('../../assets/image/icon/back.png')}\r\n+          resizeMode=\"contain\"\r\n\\ No newline at end of file\n+        />\r\n+        <Text\r\n+          style={{\r\n+            fontFamily: fonts.bold,\r\n+            color: colors.white,\r\n+            fontSize: fontSize[14],\r\n+          }}>\r\n+          Tạo mới\r\n+        </Text>\r\n+        <View style={{flex: 1}}></View>\r\n+      </View>\r\n+      <TaoDon_TopTab />\r\n+    </View>\r\n+  );\r\n+};\r\n \r\n-const TaoDon =()=>{\r\n- return(\r\n-     <View style={{flex:1, backgroundColor: colors.red}}>\r\n-        <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>\r\n-           <Image source={require('../../assets/image/icon/back.png')} resizeMode=\"contain\"/>\r\n-           <Text style={{fontFamily: fonts.bold, color: colors.white, fontSize: fontSize[14]}}>Tạo mới</Text>\r\n-           <View style={{flex:1}}></View>\r\n-        </View> \r\n-      <TaoDon_TopTab/>   \r\n-     \r\n-     </View>\r\n- )\r\n-}\r\n-\r\n-export default TaoDon\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651501314218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n             fontSize: fontSize[14],\r\n           }}>\r\n           Tạo mới\r\n         </Text>\r\n-        <View style={{flex: 1}}></View>\r\n+        <Text>aaaaa</Text>\r\n       </View>\r\n       <TaoDon_TopTab />\r\n     </View>\r\n   );\r\n };\r\n \r\n\\ No newline at end of file\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651501369216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n             fontSize: fontSize[14],\r\n           }}>\r\n           Tạo mới\r\n         </Text>\r\n-        <Text>aaaaa</Text>\r\n+        \r\n       </View>\r\n       <TaoDon_TopTab />\r\n     </View>\r\n   );\r\n };\r\n \r\n\\ No newline at end of file\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651501389076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n             fontSize: fontSize[14],\r\n           }}>\r\n           Tạo mới\r\n         </Text>\r\n-        \r\n+        <Text>''</Text>\r\n       </View>\r\n       <TaoDon_TopTab />\r\n     </View>\r\n   );\r\n };\r\n \r\n\\ No newline at end of file\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651501399417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n             fontSize: fontSize[14],\r\n           }}>\r\n           Tạo mới\r\n         </Text>\r\n-        <Text>''</Text>\r\n+        <Text></Text>\r\n       </View>\r\n       <TaoDon_TopTab />\r\n     </View>\r\n   );\r\n };\r\n \r\n\\ No newline at end of file\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651501421008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n             fontSize: fontSize[14],\r\n           }}>\r\n           Tạo mới\r\n         </Text>\r\n-        <Text></Text>\r\n+        <Text> </Text>\r\n       </View>\r\n       <TaoDon_TopTab />\r\n     </View>\r\n   );\r\n };\r\n \r\n\\ No newline at end of file\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651502292462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import React, {useEffect} from 'react';\r\n import {View, Image, Text} from 'react-native';\r\n-import TaoDon_TopTab from '../../../navigators/TaoDon_TopTab';\r\n+\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n \r\n+const Tab = createMaterialTopTabNavigator()\r\n+\r\n const TaoDon = () => {\r\n   return (\r\n     <View style={{flex: 1, backgroundColor: colors.red}}>\r\n       <View\r\n@@ -25,10 +28,37 @@\n           Tạo mới\r\n         </Text>\r\n         <Text> </Text>\r\n       </View>\r\n-      <TaoDon_TopTab />\r\n+      <View\r\n+      style={{\r\n+        flexDirection: 'row',\r\n+        backgroundColor: colors.white,\r\n+        alignItems: 'center',\r\n\\ No newline at end of file\n+      }}>\r\n+      <Tab.Navigator>\r\n+        <Tab.Screen\r\n+          name=\"Trong nước\"\r\n+          component={Domestic}\r\n+          options={{\r\n+            headerShown: false,\r\n+            tabBarActiveTintColor: colors.red,\r\n+            tabBarInactiveTintColor: colors.gray,\r\n+            tabBarStyle: {height: 50},\r\n+          }}\r\n+        />\r\n+        <Tab.Screen\r\n+          name=\"Quốc tế\"\r\n+          component={International}\r\n+          options={{\r\n+            headerShown: false,\r\n+            tabBarActiveTintColor: colors.red,\r\n+            tabBarInactiveTintColor: colors.gray,\r\n+            tabBarStyle: {height: 50},\r\n+          }}\r\n+        />\r\n+      </Tab.Navigator>\r\n     </View>\r\n   );\r\n };\r\n \r\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651502313414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n           }}\r\n         />\r\n       </Tab.Navigator>\r\n     </View>\r\n-  );\r\n+    </View>\r\n+  )\r\n };\r\n\\ No newline at end of file\n \r\n-export default TaoDon;\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651502336334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React, {useEffect} from 'react';\r\n import {View, Image, Text} from 'react-native';\r\n-\r\n+import International from '../view/screens/taoDon/Quocte';\r\n+import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n \r\n const Tab = createMaterialTopTabNavigator()\r\n@@ -61,5 +62,5 @@\n     </View>\r\n   )\r\n };\r\n \r\n-export default TaoDon;\n\\ No newline at end of file\n+export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651502376360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import React, {useEffect} from 'react';\r\n import {View, Image, Text} from 'react-native';\r\n-import International from '../view/screens/taoDon/Quocte';\r\n-import Domestic from '../view/screens/taoDon/Trongnuoc';\r\n+\r\n+\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n+import Domestic from './Trongnuoc';\r\n+import International from './Quocte';\r\n \r\n const Tab = createMaterialTopTabNavigator()\r\n \r\n const TaoDon = () => {\r\n"
+                },
+                {
+                    "date": 1651502398686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,22 @@\n import React, {useEffect} from 'react';\r\n import {View, Image, Text} from 'react-native';\r\n \r\n-\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';\r\n+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';\r\n import Domestic from './Trongnuoc';\r\n import International from './Quocte';\r\n \r\n-const Tab = createMaterialTopTabNavigator()\r\n+const Tab = createMaterialTopTabNavigator();\r\n \r\n const TaoDon = () => {\r\n   return (\r\n     <View style={{flex: 1, backgroundColor: colors.red}}>\r\n       <View\r\n         style={{\r\n           flexDirection: 'row',\r\n           alignItems: 'center',\r\n-          justifyContent:'space-between',\r\n+          justifyContent: 'space-between',\r\n         }}>\r\n         <Image\r\n           source={require('../../assets/image/icon/back.png')}\r\n           resizeMode=\"contain\"\r\n@@ -32,37 +31,37 @@\n         </Text>\r\n         <Text> </Text>\r\n       </View>\r\n       <View\r\n-      style={{\r\n-        flexDirection: 'row',\r\n-        backgroundColor: colors.white,\r\n-        alignItems: 'center',\r\n-      }}>\r\n-      <Tab.Navigator>\r\n-        <Tab.Screen\r\n-          name=\"Trong nước\"\r\n-          component={Domestic}\r\n-          options={{\r\n-            headerShown: false,\r\n-            tabBarActiveTintColor: colors.red,\r\n-            tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n-          }}\r\n-        />\r\n-        <Tab.Screen\r\n-          name=\"Quốc tế\"\r\n-          component={International}\r\n-          options={{\r\n-            headerShown: false,\r\n-            tabBarActiveTintColor: colors.red,\r\n-            tabBarInactiveTintColor: colors.gray,\r\n-            tabBarStyle: {height: 50},\r\n-          }}\r\n-        />\r\n-      </Tab.Navigator>\r\n+        style={{\r\n+          flexDirection: 'row',\r\n+          backgroundColor: colors.white,\r\n+          alignItems: 'center',\r\n+        }}>\r\n+        <Tab.Navigator>\r\n+          <Tab.Screen\r\n+            name=\"Trong nước\"\r\n+            component={Domestic}\r\n+            options={{\r\n+              headerShown: false,\r\n+              tabBarActiveTintColor: colors.red,\r\n+              tabBarInactiveTintColor: colors.gray,\r\n+              tabBarStyle: {height: 50},\r\n+            }}\r\n+          />\r\n+          <Tab.Screen\r\n+            name=\"Quốc tế\"\r\n+            component={International}\r\n+            options={{\r\n+              headerShown: false,\r\n+              tabBarActiveTintColor: colors.red,\r\n+              tabBarInactiveTintColor: colors.gray,\r\n+              tabBarStyle: {height: 50},\r\n+            }}\r\n+          />\r\n+        </Tab.Navigator>\r\n+      </View>\r\n     </View>\r\n-    </View>\r\n-  )\r\n+  );\r\n };\r\n \r\n export default TaoDon;\r\n"
+                },
+                {
+                    "date": 1651502753663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, {useEffect} from 'react';\r\n-import {View, Image, Text} from 'react-native';\r\n+import {View, Image, Text, TouchableOpacity} from 'react-native';\r\n \r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';\r\n import Domestic from './Trongnuoc';\r\n@@ -16,12 +16,14 @@\n           flexDirection: 'row',\r\n           alignItems: 'center',\r\n           justifyContent: 'space-between',\r\n         }}>\r\n+        <TouchableOpacity onPress={()=>{}}>\r\n         <Image\r\n           source={require('../../assets/image/icon/back.png')}\r\n           resizeMode=\"contain\"\r\n         />\r\n+        </TouchableOpacity>\r\n         <Text\r\n           style={{\r\n             fontFamily: fonts.bold,\r\n             color: colors.white,\r\n"
+                },
+                {
+                    "date": 1651502883738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,10 @@\n         style={{\r\n           flexDirection: 'row',\r\n           backgroundColor: colors.white,\r\n           alignItems: 'center',\r\n+          height: '100%',\r\n+          width: '100%'\r\n         }}>\r\n         <Tab.Navigator>\r\n           <Tab.Screen\r\n             name=\"Trong nước\"\r\n"
+                },
+                {
+                    "date": 1651503122257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n+              tabBarAllowFontScaling: true\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503184901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-              tabBarAllowFontScaling: true\r\n+             title:'adcycy'\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503202493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             title:'adcycy'\r\n+             title:'Trong nước'\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503222625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             title:'Trong nước'\r\n+             title:'Trong Nuoc'\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503232247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             title:'Trong Nuoc'\r\n+             \r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503315521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             \r\n+             tabBarLabelStyle: {fontFamily:fonts.normal}\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503344930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             tabBarLabelStyle: {fontFamily:fonts.normal}\r\n+             tabBarLabelStyle: {fontFamily:fonts.normal, fontSize: fontSize[16]}\r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                },
+                {
+                    "date": 1651503356445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               headerShown: false,\r\n               tabBarActiveTintColor: colors.red,\r\n               tabBarInactiveTintColor: colors.gray,\r\n               tabBarStyle: {height: 50},\r\n-             tabBarLabelStyle: {fontFamily:fonts.normal, fontSize: fontSize[16]}\r\n+             \r\n             }}\r\n           />\r\n           <Tab.Screen\r\n             name=\"Quốc tế\"\r\n"
+                }
+            ],
+            "date": 1651412851616,
+            "name": "Commit-0",
+            "content": "import React from \"react\"\r\nimport { View } from 'react-native'\r\nimport { colors, fonts,fontSize } from \"../../styles/typography\"\r\n\r\n\r\nconst TaoDon =()=>{\r\n return(\r\n     <View style={{flex:1, backgroundColor: colors.blue}}></View>\r\n )\r\n}\r\n\r\nexport default TaoDon"
+        }
+    ]
+}

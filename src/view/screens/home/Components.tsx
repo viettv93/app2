@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Image, Text, TouchableOpacity, View, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Image, Text, TouchableOpacity, View, FlatList, Alert} from 'react-native';
 import {colors, fonts, fontSize} from '../../styles/typography';
 import FlatlistEnd from './FlatlistEnd';
 import FlatListHome from './FlatlistHome';
@@ -13,17 +13,18 @@ const homeData = [
   {id: 4, name: 'khuyen mai'},
 ];
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [id, setId] = useState('355895476');
   const [name, setName] = useState('   Trần Quang Vinh');
   const [comment, setComment] = useState(
     '16:40 - Lý do bưu tá sẽ ghi vào đây, khách hàng chỉ nhận áo, không quần',
   );
+
   const homeItems = ({item, index}) => {
     if (item.id === 1) {
       return (
         <View style={Styles.container}>
-          <FlatListHome />
+          <FlatListHome navigation={navigation} />
           <View style={Styles.space_3}></View>
         </View>
       );

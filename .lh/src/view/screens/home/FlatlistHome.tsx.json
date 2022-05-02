@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 92,
             "patches": [
                 {
                     "date": 1650290278452,
@@ -256,6 +256,126 @@
                 {
                     "date": 1650906348325,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   return (\r\n     <View\r\n       style={Styles.container_Flalist1}>\r\n       <FlatList\r\n-        style={{backgroundColor: colors.white, width: '100%'}}\r\n+        style={Styles.flatListStyles}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n"
+                },
+                {
+                    "date": 1651412737434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,17 @@\n import React from 'react';\r\n-import {FlatList, View, Image, Text, Dimensions} from 'react-native';\r\n+import {\r\n+  FlatList,\r\n+  View,\r\n+  Image,\r\n+  Text,\r\n+  Dimensions,\r\n+  TouchableOpacity,\r\n+} from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import Styles from './Styles';\r\n \r\n-const { width, height } = Dimensions.get('screen');\r\n+const {width, height} = Dimensions.get('screen');\r\n \r\n const array1 = [\r\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n@@ -19,34 +26,36 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = () => {\r\n+const FlatListHome = ({navigation}) => {\r\n+  const onpressHandle = () => {\r\n+    console.log({item.title})\r\n+    navigation.navigate({item.title});\r\n+  };\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n-      <View\r\n-        style={Styles.container_FlatlistHome}>\r\n-        <Image\r\n-          source={item.img}\r\n-          resizeMode=\"contain\"\r\n-          style={Styles.boxStyles}\r\n-        />\r\n-        <Text style={Styles.txtBox}>{item.title}</Text>\r\n+      <View style={Styles.container_FlatlistHome}>\r\n+        <TouchableOpacity onPress={onpressHandle}>\r\n+          <Image\r\n+            source={item.img}\r\n+            resizeMode=\"contain\"\r\n+            style={Styles.boxStyles}\r\n+          />\r\n+          <Text style={Styles.txtBox}>{item.title}</Text>\r\n+        </TouchableOpacity>\r\n       </View>\r\n     );\r\n   };\r\n- \r\n \r\n   return (\r\n-    <View\r\n-      style={Styles.container_Flalist1}>\r\n+    <View style={Styles.container_Flalist1}>\r\n       <FlatList\r\n         style={Styles.flatListStyles}\r\n         data={array1}\r\n         renderItem={renderItem1}\r\n         numColumns={4}\r\n       />\r\n-      \r\n     </View>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1651412789307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n const FlatListHome = ({navigation}) => {\r\n   const onpressHandle = () => {\r\n-    console.log({item.title})\r\n-    navigation.navigate({item.title});\r\n+    console.log({title})\r\n+    navigation.navigate({title});\r\n   };\r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n"
+                },
+                {
+                    "date": 1651413031928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,16 +27,15 @@\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n const FlatListHome = ({navigation}) => {\r\n-  const onpressHandle = () => {\r\n-    console.log({title})\r\n-    navigation.navigate({title});\r\n-  };\r\n+ \r\n   const renderItem1 = ({item, index}) => {\r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n-        <TouchableOpacity onPress={onpressHandle}>\r\n+        <TouchableOpacity onPress={()=>{\r\n+          navigation.navigate({item.title})\r\n+        }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n             style={Styles.boxStyles}\r\n"
+                },
+                {
+                    "date": 1651413346675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,19 +29,20 @@\n ];\r\n const FlatListHome = ({navigation}) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n+    const screen = item.title\r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          navigation.navigate({item.title})\r\n+          navigation.navigate({screen})\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n             style={Styles.boxStyles}\r\n           />\r\n-          <Text style={Styles.txtBox}>{item.title}</Text>\r\n+          <Text style={Styles.txtBox}>{screen}</Text>\r\n         </TouchableOpacity>\r\n       </View>\r\n     );\r\n   };\r\n"
+                },
+                {
+                    "date": 1651413467527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,20 +29,21 @@\n ];\r\n const FlatListHome = ({navigation}) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n-    const screen = item.title\r\n+    \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n+          let screen = item.title\r\n           navigation.navigate({screen})\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n             style={Styles.boxStyles}\r\n           />\r\n-          <Text style={Styles.txtBox}>{screen}</Text>\r\n+          <Text style={Styles.txtBox}>{item.title}</Text>\r\n         </TouchableOpacity>\r\n       </View>\r\n     );\r\n   };\r\n"
+                },
+                {
+                    "date": 1651413727219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n const array1 = [\r\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n-    title: 'Tạo đơn ',\r\n+    title: 'Tạo đơn',\r\n   },\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n"
+                },
+                {
+                    "date": 1651414918005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   TouchableOpacity,\r\n } from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import Styles from './Styles';\r\n-\r\n+import Screen from '../../../constants/Screen';\r\n const {width, height} = Dimensions.get('screen');\r\n \r\n const array1 = [\r\n   {\r\n@@ -34,9 +34,9 @@\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           let screen = item.title\r\n-          navigation.navigate({screen})\r\n+          navigation.navigate(item.title)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651414945870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           let screen = item.title\r\n-          navigation.navigate(item.title)\r\n+          navigation.navigate(screen)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651416740707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   Image,\r\n   Text,\r\n   Dimensions,\r\n   TouchableOpacity,\r\n+  Alert,\r\n } from 'react-native';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import Styles from './Styles';\r\n import Screen from '../../../constants/Screen';\r\n@@ -33,10 +34,11 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          let screen = item.title\r\n-          navigation.navigate(screen)\r\n+          // let screen = item.title\r\n+          // navigation.navigate(screen)\r\n+          alert('navigate')\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651417733896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           // let screen = item.title\r\n           // navigation.navigate(screen)\r\n-          alert('navigate')\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651417944596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n     title: 'Tạo đơn',\r\n   },\r\n-  {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng'},\r\n+  {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng', id: 'order'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n   {\r\n     img: require('../../assets/image/icon/doanh_thu.png'),\r\n"
+                },
+                {
+                    "date": 1651418006885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          // let screen = item.title\r\n-          // navigation.navigate(screen)\r\n+          // navigation.navigate(item?.id)\r\n+          alert(navigation)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418028405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           // navigation.navigate(item?.id)\r\n-          alert(navigation)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418126636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          // navigation.navigate(item?.id)\r\n+          navigation.navigate(item?.id)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418221260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,10 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          navigation.navigate(item?.id)\r\n+          // navigation.navigate(item?.id)\r\n+          alert(navigation)\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418230273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           // navigation.navigate(item?.id)\r\n-          alert(navigation)\r\n+          alert(JSON.stringify(navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418288866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,17 +27,17 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = ({navigation}) => {\r\n+const FlatListHome = (props: any) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           // navigation.navigate(item?.id)\r\n-          alert(JSON.stringify(navigation))\r\n+          alert(JSON.stringify(props))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418322639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,17 +27,17 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = (props: any) => {\r\n+const FlatListHome = ({navigation}) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n           // navigation.navigate(item?.id)\r\n-          alert(JSON.stringify(props))\r\n+          alert(JSON.stringify(navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418340402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          // navigation.navigate(item?.id)\r\n-          alert(JSON.stringify(navigation))\r\n+          navigation.navigate(item?.id)\r\n+          // alert(JSON.stringify(navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418356383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          navigation.navigate(item?.id)\r\n+          navigation.navigate(\"order\")\r\n           // alert(JSON.stringify(navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n"
+                },
+                {
+                    "date": 1651418401774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = ({navigation}) => {\r\n+const FlatListHome = (props) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n"
+                },
+                {
+                    "date": 1651418429358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,17 +27,16 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = (props) => {\r\n+const FlatListHome = (props: any) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          navigation.navigate(\"order\")\r\n-          // alert(JSON.stringify(navigation))\r\n+          alert(JSON.stringify(props))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418484215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,16 +27,16 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = (props: any) => {\r\n+const FlatListHome = ({navigation}: any) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          alert(JSON.stringify(props))\r\n+          alert(JSON.stringify(navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418499047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,16 +27,16 @@\n   },\r\n   {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n   {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n ];\r\n-const FlatListHome = ({navigation}: any) => {\r\n+const FlatListHome = (props) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          alert(JSON.stringify(navigation))\r\n+          alert(JSON.stringify(props))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651418563960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          alert(JSON.stringify(props))\r\n+          alert(JSON.stringify(props.navigation))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651419414018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          alert(JSON.stringify(props.navigation))\r\n+          props.navigation.navigate(\"test\")\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651419423967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          props.navigation.navigate(\"test\")\r\n+          props.navigation.navigate(\"order\")\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651420303117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,25 +18,26 @@\n     img: require('../../assets/image/icon/tao_don.png'),\r\n     title: 'Tạo đơn',\r\n   },\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng', id: 'order'},\r\n-  {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng'},\r\n-  {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC'},\r\n+  {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng', id: 'money'},\r\n+  {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC', id :'search'},\r\n   {\r\n     img: require('../../assets/image/icon/doanh_thu.png'),\r\n-    title: 'Doanh thu',\r\n+    title: 'Doanh thu',id: 'turnover'\r\n   },\r\n-  {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng'},\r\n-  {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng'},\r\n+  {img: require('../../assets/image/icon/hoa_hong.png'), title: 'Hoa hồng', id: 'poundage'},\r\n+  {img: require('../../assets/image/icon/kho_hang.png'), title: 'Kho hàng', id: 'warehouse'},\r\n ];\r\n const FlatListHome = (props) => {\r\n  \r\n   const renderItem1 = ({item, index}) => {\r\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-          props.navigation.navigate(\"order\")\r\n+           if (item.id==='order') (props.navigation.navigate('order'))\r\n+            else if (item.id ==='money')( props.navigation.navigate('money'))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651420464231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \r\n const array1 = [\r\n   {\r\n     img: require('../../assets/image/icon/tao_don.png'),\r\n-    title: 'Tạo đơn',\r\n+    title: 'Tạo đơn',id: 'create order'\r\n   },\r\n   {img: require('../../assets/image/icon/don_hang.png'), title: 'Đơn hàng', id: 'order'},\r\n   {img: require('../../assets/image/icon/tien_hang.png'), title: 'Tiền hàng', id: 'money'},\r\n   {img: require('../../assets/image/icon/tim_bank.png'), title: 'Tìm BC', id :'search'},\r\n@@ -34,10 +34,10 @@\n     \r\n     return (\r\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n-           if (item.id==='order') (props.navigation.navigate('order'))\r\n-            else if (item.id ==='money')( props.navigation.navigate('money'))\r\n+           if (item.id==='create order') (props.navigation.navigate('create order'))\r\n+            else if (item.id ==='order')( props.navigation.navigate('order'))\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
+                },
+                {
+                    "date": 1651420615019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,13 @@\n       <View style={Styles.container_FlatlistHome}>\r\n         <TouchableOpacity onPress={()=>{\r\n            if (item.id==='create order') (props.navigation.navigate('create order'))\r\n             else if (item.id ==='order')( props.navigation.navigate('order'))\r\n+            else if (item.id ==='money')( props.navigation.navigate('money'))\r\n+            else if (item.id ==='search')( props.navigation.navigate('search'))\r\n+            else if (item.id ==='turnover')( props.navigation.navigate('turnover'))\r\n+            else if (item.id ==='poundage')( props.navigation.navigate('poundage'))\r\n+            else  props.navigation.navigate('warehouse')\r\n         }}>\r\n           <Image\r\n             source={item.img}\r\n             resizeMode=\"contain\"\r\n"
                 }
             ],
             "date": 1650290278452,

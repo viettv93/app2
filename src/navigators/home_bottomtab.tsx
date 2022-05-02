@@ -8,6 +8,14 @@ import FaceBookScreen from '../view/screens/faceBook/Component';
 import Notification from '../view/screens/notifi/Components';
 import Menu from '../view/screens/menu/Components';
 import {colors} from '../view/styles/typography';
+import TaoDon from '../view/screens/taoDon/Component';
+import TestScreen from '../view/screens/test';
+import Don_Hang from '../view/screens/donhang/Component';
+import Tien_Hang from '../view/screens/tienhang/Component';
+import TimBuuCuc from '../view/screens/timBuuCuc/Component';
+import Doanh_thu from '../view/screens/doanhthu/Component';
+import HoaHong from '../view/screens/hoahong/Component';
+import Kho_hang from '../view/screens/khohang/Component';
 
 const AppStack = createNativeStackNavigator();
 const AppTab = createBottomTabNavigator();
@@ -129,6 +137,41 @@ const BottomTabHome = () => {
         <AppStack.Screen
           name="Main"
           component={BottomTab}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="order"
+          component={Don_Hang}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="money"
+          component={Tien_Hang}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="search"
+          component={TimBuuCuc}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="turnover"
+          component={Doanh_thu}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="create order"
+          component={TaoDon}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="poundage"
+          component={HoaHong}
+          options={{headerShown: false}}
+        />
+        <AppStack.Screen
+          name="warehouse"
+          component={Kho_hang}
           options={{headerShown: false}}
         />
       </AppStack.Navigator>
