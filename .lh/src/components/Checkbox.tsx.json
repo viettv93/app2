@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/components/Checkbox.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1651507788761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651507841813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,19 @@\n import React, {useState} from 'react';\r\n-import {StyleSheet, Text, View, Image} from 'react-native';\r\n+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';\r\n \r\n const Checkbox = (props: any) => {\r\n \r\n   const [checked, setChecked] = useState<boolean>(false);\r\n \r\n+  const onCheckedChange = () => {\r\n+    setChecked(!checked);\r\n+  }\r\n+\r\n   return (\r\n-    <View>\r\n+    <TouchableOpacity onPress={onCheckedChange}>\r\n       <Image source={checked ? require('') : require('')} />\r\n-    </View>\r\n+    </TouchableOpacity>\r\n   );\r\n };\r\n \r\n export default Checkbox;\r\n"
+                },
+                {
+                    "date": 1651508048450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   }\r\n \r\n   return (\r\n     <TouchableOpacity onPress={onCheckedChange}>\r\n-      <Image source={checked ? require('') : require('')} />\r\n+      <Image source={checked ? require('../view/assets/image/icon/back.png') : require('../view/assets/image/icon/crown.png')} />\r\n     </TouchableOpacity>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1651508071518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   }\r\n \r\n   return (\r\n     <TouchableOpacity onPress={onCheckedChange}>\r\n-      <Image source={checked ? require('../view/assets/image/icon/back.png') : require('../view/assets/image/icon/crown.png')} />\r\n+      <Image source={checked ? require('../view/assets/image/icon/cho_hoan_duyet.png') : require('../view/assets/image/icon/crown.png')} />\r\n     </TouchableOpacity>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1651508215527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   const [checked, setChecked] = useState<boolean>(false);\r\n \r\n   const onCheckedChange = () => {\r\n     setChecked(!checked);\r\n+    props.onChange(checked);\r\n   }\r\n \r\n   return (\r\n     <TouchableOpacity onPress={onCheckedChange}>\r\n"
+                },
+                {
+                    "date": 1651509237453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   }\r\n \r\n   return (\r\n     <TouchableOpacity onPress={onCheckedChange}>\r\n-      <Image source={checked ? require('../view/assets/image/icon/cho_hoan_duyet.png') : require('../view/assets/image/icon/crown.png')} />\r\n+      <Image source={checked ? require('../view/assets/image/icon/box_checked.png') : require('../view/assets/image/icon/box.png')} />\r\n     </TouchableOpacity>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1651509273518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, {useState} from 'react';\r\n-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';\r\n+import {StyleSheet,  Image, TouchableOpacity} from 'react-native';\r\n \r\n const Checkbox = (props: any) => {\r\n \r\n   const [checked, setChecked] = useState<boolean>(false);\r\n"
+                }
+            ],
+            "date": 1651507788761,
+            "name": "Commit-0",
+            "content": "import React, {useState} from 'react';\r\nimport {StyleSheet, Text, View, Image} from 'react-native';\r\n\r\nconst Checkbox = (props: any) => {\r\n\r\n  const [checked, setChecked] = useState<boolean>(false);\r\n\r\n  return (\r\n    <View>\r\n      <Image source={checked ? require('') : require('')} />\r\n    </View>\r\n  );\r\n};\r\n\r\nexport default Checkbox;\r\n\r\nconst styles = StyleSheet.create({});\r\n"
+        }
+    ]
+}
