@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/shared/redux/actions/getAddressAction.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1651591162621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651595840415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n });\r\n export const GetCitySuccess = (data: Res_Suc_GetCity) => ({\r\n     type: ACTION_TYPES.GET_CITY_SUCCESS,\r\n     payload: {\r\n-        lstCity: data.data\r\n+        lstProvince: data.data\r\n     }\r\n });\r\n export const GetCityFailed = (error: Res_Error) => ({\r\n     type: ACTION_TYPES.GET_CITY_FAILED,\r\n"
+                }
+            ],
+            "date": 1651591162621,
+            "name": "Commit-0",
+            "content": "import { ACTION_TYPES } from \"../constant/actionTypes\";\r\nimport { Res_Error,Res_Suc_GetCity,Res_Suc_GetDistrict,Res_Suc_GetWard } from \"../models/customer-infor\";\r\n// lay danh sach tinh thanh\r\nexport const GetCity = () => ({\r\n    type: ACTION_TYPES.GET_CITY,\r\n});\r\nexport const GetCitySuccess = (data: Res_Suc_GetCity) => ({\r\n    type: ACTION_TYPES.GET_CITY_SUCCESS,\r\n    payload: {\r\n        lstCity: data.data\r\n    }\r\n});\r\nexport const GetCityFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_CITY_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});\r\n\r\n// lay danh sach quan huyen\r\nexport const GetDistrict = () => ({\r\n    type: ACTION_TYPES.GET_DISTRICT,\r\n});\r\nexport const GetDistrictSuccess = (data: Res_Suc_GetDistrict) => ({\r\n    type: ACTION_TYPES.GET_DISTRICT_SUCCESS,\r\n    payload: {\r\n        lstDistrict: data.data\r\n    }\r\n});\r\nexport const GetDistrictFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_DISTRICT_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});\r\n\r\n// lay danh sach phuong xa\r\nexport const GetWard = () => ({\r\n    type: ACTION_TYPES.GET_WARD,\r\n});\r\nexport const GetWardSuccess = (data: Res_Suc_GetWard) => ({\r\n    type: ACTION_TYPES.GET_WARD_SUCCESS,\r\n    payload: {\r\n        lstWard: data.data\r\n    }\r\n});\r\nexport const GetWardFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_WARD_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});"
+        }
+    ]
+}

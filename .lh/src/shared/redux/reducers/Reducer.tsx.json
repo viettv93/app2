@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/shared/redux/reducers/Reducer.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1651590992004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651595814190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n \r\n const initialState = {\r\n-    loading_city: false,\r\n-    lstCity: null,\r\n+    loading_province: false,\r\n+    lstProvince: null,\r\n     loading_district: false,\r\n     lstDistrict: null,\r\n     loading_ward: false,\r\n     lstWard: null,\r\n@@ -16,20 +16,20 @@\n         // danh sach tinh thanh\r\n         case ACTION_TYPES.GET_CITY:\r\n             return {\r\n                 ...state,\r\n-                loading_city: true\r\n+                loading_province: true\r\n             };\r\n         case ACTION_TYPES.GET_CITY_SUCCESS:\r\n             return {\r\n                 ...state,\r\n-                loading_city: false,\r\n-                lstCity: action.payload.lstCity,\r\n+                loading_province: false,\r\n+                lstProvince: action.payload.lstProvince,\r\n             };\r\n         case ACTION_TYPES.GET_CITY_FAILED:\r\n             return {\r\n                 ...state,\r\n-                loading_city: false,\r\n+                loading_province: false,\r\n                 status: action.payload.status,\r\n                 message: action.payload.message,\r\n             };\r\n         // danh sach quan huyen\r\n"
+                }
+            ],
+            "date": 1651590992004,
+            "name": "Commit-0",
+            "content": "import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n\r\nconst initialState = {\r\n    loading_city: false,\r\n    lstCity: null,\r\n    loading_district: false,\r\n    lstDistrict: null,\r\n    loading_ward: false,\r\n    lstWard: null,\r\n    status: '',\r\n    message: '',\r\n};\r\n\r\nexport default (state = initialState, action: any) => {\r\n    switch (action.type) {\r\n        // danh sach tinh thanh\r\n        case ACTION_TYPES.GET_CITY:\r\n            return {\r\n                ...state,\r\n                loading_city: true\r\n            };\r\n        case ACTION_TYPES.GET_CITY_SUCCESS:\r\n            return {\r\n                ...state,\r\n                loading_city: false,\r\n                lstCity: action.payload.lstCity,\r\n            };\r\n        case ACTION_TYPES.GET_CITY_FAILED:\r\n            return {\r\n                ...state,\r\n                loading_city: false,\r\n                status: action.payload.status,\r\n                message: action.payload.message,\r\n            };\r\n        // danh sach quan huyen\r\n        case ACTION_TYPES.GET_DISTRICT:\r\n            return {\r\n                ...state,\r\n                loading_district: true,\r\n                lstDistrict: []\r\n            };\r\n        case ACTION_TYPES.GET_DISTRICT_SUCCESS:\r\n            return {\r\n                ...state,\r\n                loading_district: false,\r\n                lstDistrict: action.payload.lstDistrict,\r\n            };\r\n        case ACTION_TYPES.GET_DISTRICT_FAILED:\r\n            return {\r\n                ...state,\r\n                loading_district: false,\r\n                lstDistrict: [],\r\n                status: action.payload.status,\r\n                message: action.payload.message,\r\n            };\r\n        // danh sach phuong xa\r\n        case ACTION_TYPES.GET_WARD:\r\n            return {\r\n                ...state,\r\n                loading_ward: true,\r\n                lstWard: []\r\n            };\r\n        case ACTION_TYPES.GET_WARD_SUCCESS:\r\n            return {\r\n                ...state,\r\n                loading_ward: false,\r\n                lstWard: action.payload.lstWard,\r\n            };\r\n        case ACTION_TYPES.GET_WARD_FAILED:\r\n            return {\r\n                ...state,\r\n                loading_ward: false,\r\n                lstWard: [],\r\n                status: action.payload.status,\r\n                message: action.payload.message,\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n};"
+        }
+    ]
+}

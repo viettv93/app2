@@ -5,7 +5,7 @@ import {colors, fonts, fontSize} from '../../styles/typography';
 
 const Domestic = () => {
   const onPostOfficeChange = (value: boolean) => {};
-
+ const getAddressReceiver =(props: any)=>{}
   return (
     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12,}}>
       <TouchableOpacity>
@@ -136,11 +136,12 @@ const Domestic = () => {
             <TextInput placeholder='  Họ tên' style={{padding: 0, width: '88%'}}/>
             
           </View>
+          <TouchableOpacity onPress={getAddressReceiver}>
           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>
             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />
-            <TextInput placeholder='  Địa chỉ' style={{padding: 0, width: '88%'}}/>
-            
+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14],marginVertical: 3}}>  Địa chỉ</Text>
           </View>
+          </TouchableOpacity>
 
     </View>
   );

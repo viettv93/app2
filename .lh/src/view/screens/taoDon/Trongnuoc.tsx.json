@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 92,
+            "activePatchIndex": 102,
             "patches": [
                 {
                     "date": 1651422813724,
@@ -376,6 +376,46 @@
                 {
                     "date": 1651511666636,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n             flexDirection: 'row',\r\n             alignItems: 'center',\r\n             justifyContent: 'space-between',\r\n             backgroundColor: colors.background,\r\n-          marginBottom: 5\r\n+          marginBottom: 10\r\n           }}>\r\n           <Text\r\n             style={{\r\n               fontFamily: fonts.bold,\r\n"
+                },
+                {
+                    "date": 1651585551302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <TextInput placeholder='  Địa chỉ' style={{padding: 0, width: '88%'}}/>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585588377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585619170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 15}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585626983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 15}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 16}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585632716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 16}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 15}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585638833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 15}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 14}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585655878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize: 14}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585680255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14]}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14],marginHorizontal: 3}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651585690496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n             \r\n           </View>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n-            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14],marginHorizontal: 3}}>  Địa chỉ</Text>\r\n+            <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14],marginVertical: 3}}>  Địa chỉ</Text>\r\n             \r\n           </View>\r\n \r\n     </View>\r\n"
+                },
+                {
+                    "date": 1651588716702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n \r\n const Domestic = () => {\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n-\r\n+ const getAddressReceiver =(props: any)=>{}\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12,}}>\r\n       <TouchableOpacity>\r\n         <View\r\n@@ -135,13 +135,14 @@\n             <Image source={require('../../assets/image/icon/user.png')} resizeMode= 'contain' />\r\n             <TextInput placeholder='  Họ tên' style={{padding: 0, width: '88%'}}/>\r\n             \r\n           </View>\r\n+          <TouchableOpacity onPress={getAddressReceiver}>\r\n           <View style={{flexDirection: 'row', alignItems: 'center', borderRadius: 6, borderWidth: 0.5, borderColor: colors.gray,marginBottom:5, padding:5}}>\r\n             <Image source={require('../../assets/image/icon/address.png')} resizeMode= 'contain' />\r\n             <Text style={{fontFamily: fonts.normal, color:colors.gray, fontSize:fontSize[14],marginVertical: 3}}>  Địa chỉ</Text>\r\n-            \r\n           </View>\r\n+          </TouchableOpacity>\r\n \r\n     </View>\r\n   );\r\n };\r\n"
                 }
             ],
             "date": 1651422813724,

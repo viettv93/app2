@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/shared/redux/constant/addressUrl.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1651591937660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1651591937660,
+            "name": "Commit-0",
+            "content": " export const AddressUrl = {\r\n    Province :'https://api.viettelpost.vn/api/setting/listallprovince',\r\n    District: 'https://api.viettelpost.vn/api/setting/listalldistrict',\r\n    Ward: 'https://api.viettelpost.vn/api/setting/listallwards',\r\n }"
+        }
+    ]
+}
