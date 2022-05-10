@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/shared/redux/actions/actions.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1652109057036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652198835936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,55 +1,21 @@\n import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n-import { Res_Error,Res_Suc_GetCity,Res_Suc_GetDistrict,Res_Suc_GetWard } from \"../models/customer-infor\";\r\n+import { Res_Error,Res_Suc_GetCity} from \"../models/customer-infor\";\r\n // lay danh sach tinh thanh\r\n-export const GetCity = () => ({\r\n-    type: ACTION_TYPES.GET_CITY,\r\n+export const GetAddress = () => ({\r\n+    type: ACTION_TYPES.GET_ADDRESS,\r\n });\r\n-export const GetCitySuccess = (data: Res_Suc_GetCity) => ({\r\n-    type: ACTION_TYPES.GET_CITY_SUCCESS,\r\n+export const GetAddressSuccess = (data: Res_Suc_GetCity) => ({\r\n+    type: ACTION_TYPES.GET_ADDRESS_SUCCESS,\r\n     payload: {\r\n         lstProvince: data.data\r\n     }\r\n });\r\n-export const GetCityFailed = (error: Res_Error) => ({\r\n-    type: ACTION_TYPES.GET_CITY_FAILED,\r\n+export const GetAddressFailed = (error: Res_Error) => ({\r\n+    type: ACTION_TYPES.GET_ADDRESS_FAILED,\r\n     payload: {\r\n         status: error.status,\r\n         message: error.message,\r\n     }\r\n });\r\n \r\n-// lay danh sach quan huyen\r\n-export const GetDistrict = () => ({\r\n-    type: ACTION_TYPES.GET_DISTRICT,\r\n-});\r\n-export const GetDistrictSuccess = (data: Res_Suc_GetDistrict) => ({\r\n-    type: ACTION_TYPES.GET_DISTRICT_SUCCESS,\r\n-    payload: {\r\n-        lstDistrict: data.data\r\n-    }\r\n-});\r\n-export const GetDistrictFailed = (error: Res_Error) => ({\r\n-    type: ACTION_TYPES.GET_DISTRICT_FAILED,\r\n-    payload: {\r\n-        status: error.status,\r\n-        message: error.message,\r\n-    }\r\n-});\r\n \r\n-// lay danh sach phuong xa\r\n-export const GetWard = () => ({\r\n-    type: ACTION_TYPES.GET_WARD,\r\n-});\r\n-export const GetWardSuccess = (data: Res_Suc_GetWard) => ({\r\n-    type: ACTION_TYPES.GET_WARD_SUCCESS,\r\n-    payload: {\r\n-        lstWard: data.data\r\n-    }\r\n-});\r\n\\ No newline at end of file\n-export const GetWardFailed = (error: Res_Error) => ({\r\n-    type: ACTION_TYPES.GET_WARD_FAILED,\r\n-    payload: {\r\n-        status: error.status,\r\n-        message: error.message,\r\n-    }\r\n-});\n"
+                },
+                {
+                    "date": 1652198846171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n import { Res_Error,Res_Suc_GetCity} from \"../models/customer-infor\";\r\n-// lay danh sach tinh thanh\r\n+\r\n export const GetAddress = () => ({\r\n     type: ACTION_TYPES.GET_ADDRESS,\r\n });\r\n export const GetAddressSuccess = (data: Res_Suc_GetCity) => ({\r\n"
+                },
+                {
+                    "date": 1652199337539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n-import { Res_Error,Res_Suc_GetCity} from \"../models/customer-infor\";\r\n+import { Res_Error,Res_Suc_GetAddress} from \"../models/customer-infor\";\r\n \r\n export const GetAddress = () => ({\r\n     type: ACTION_TYPES.GET_ADDRESS,\r\n });\r\n-export const GetAddressSuccess = (data: Res_Suc_GetCity) => ({\r\n+export const GetAddressSuccess = (data: Res_Suc_GetAddress) => ({\r\n     type: ACTION_TYPES.GET_ADDRESS_SUCCESS,\r\n     payload: {\r\n         lstProvince: data.data\r\n     }\r\n"
+                },
+                {
+                    "date": 1652199539667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n });\r\n export const GetAddressSuccess = (data: Res_Suc_GetAddress) => ({\r\n     type: ACTION_TYPES.GET_ADDRESS_SUCCESS,\r\n     payload: {\r\n-        lstProvince: data.data\r\n+        lstAddress: data\r\n     }\r\n });\r\n export const GetAddressFailed = (error: Res_Error) => ({\r\n     type: ACTION_TYPES.GET_ADDRESS_FAILED,\r\n"
+                }
+            ],
+            "date": 1652109057036,
+            "name": "Commit-0",
+            "content": "import { ACTION_TYPES } from \"../constant/actionTypes\";\r\nimport { Res_Error,Res_Suc_GetCity,Res_Suc_GetDistrict,Res_Suc_GetWard } from \"../models/customer-infor\";\r\n// lay danh sach tinh thanh\r\nexport const GetCity = () => ({\r\n    type: ACTION_TYPES.GET_CITY,\r\n});\r\nexport const GetCitySuccess = (data: Res_Suc_GetCity) => ({\r\n    type: ACTION_TYPES.GET_CITY_SUCCESS,\r\n    payload: {\r\n        lstProvince: data.data\r\n    }\r\n});\r\nexport const GetCityFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_CITY_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});\r\n\r\n// lay danh sach quan huyen\r\nexport const GetDistrict = () => ({\r\n    type: ACTION_TYPES.GET_DISTRICT,\r\n});\r\nexport const GetDistrictSuccess = (data: Res_Suc_GetDistrict) => ({\r\n    type: ACTION_TYPES.GET_DISTRICT_SUCCESS,\r\n    payload: {\r\n        lstDistrict: data.data\r\n    }\r\n});\r\nexport const GetDistrictFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_DISTRICT_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});\r\n\r\n// lay danh sach phuong xa\r\nexport const GetWard = () => ({\r\n    type: ACTION_TYPES.GET_WARD,\r\n});\r\nexport const GetWardSuccess = (data: Res_Suc_GetWard) => ({\r\n    type: ACTION_TYPES.GET_WARD_SUCCESS,\r\n    payload: {\r\n        lstWard: data.data\r\n    }\r\n});\r\nexport const GetWardFailed = (error: Res_Error) => ({\r\n    type: ACTION_TYPES.GET_WARD_FAILED,\r\n    payload: {\r\n        status: error.status,\r\n        message: error.message,\r\n    }\r\n});"
+        }
+    ]
+}

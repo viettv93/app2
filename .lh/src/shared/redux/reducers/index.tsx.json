@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/shared/redux/reducers/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1652109558265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1652109558265,
+            "name": "Commit-0",
+            "content": "import {combineReducers} from 'redux';\r\nimport AddressReducer from './AddressReducer';\r\nconst RootReducer = combineReducers({\r\n    AddressReducer\r\n});\r\n\r\nexport default RootReducer;"
+        }
+    ]
+}

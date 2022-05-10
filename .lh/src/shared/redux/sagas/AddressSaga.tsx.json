@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/shared/redux/sagas/AddressSaga.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1652196164513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652196610397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,8 @@\n const getAddressData = (params: any) => {\r\n   axios.get(AddressUrl.Province, {params})\r\n   .then(response => {\r\n     console.log(response);\r\n-\r\n-\r\n-\r\n   });\r\n };\r\n function* fetchCity(action: any) {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1652196869858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n };\r\n function* fetchCity(action: any) {\r\n   try {\r\n     //Chỗ này gọi api rồi trả về cho reducer\r\n-\r\n+    console.log(\"VAO DAY ROI\")\r\n     const data = yield call(getAddressData, params)\r\n    if(data.data){\r\n      yield put(GetCitySuccess(data.data))\r\n    }\r\n"
+                },
+                {
+                    "date": 1652197074065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n function* fetchCity(action: any) {\r\n   try {\r\n     //Chỗ này gọi api rồi trả về cho reducer\r\n     console.log(\"VAO DAY ROI\")\r\n-    const data = yield call(getAddressData, params)\r\n+    const data = yield call(getAddressData )\r\n    if(data.data){\r\n      yield put(GetCitySuccess(data.data))\r\n    }\r\n   } catch (error) {\r\n"
+                },
+                {
+                    "date": 1652197224557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n   try {\r\n     //Chỗ này gọi api rồi trả về cho reducer\r\n     console.log(\"VAO DAY ROI\")\r\n     const data = yield call(getAddressData )\r\n-   if(data.data){\r\n-     yield put(GetCitySuccess(data.data))\r\n+   if(data){\r\n+     yield put(GetCitySuccess(data))\r\n    }\r\n   } catch (error) {\r\n     console.log(error)\r\n     yield put(GetCityFailed(error));\r\n"
+                },
+                {
+                    "date": 1652200296564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,27 +7,49 @@\n   take,\r\n   takeLatest,\r\n   select,\r\n } from 'redux-saga/effects';\r\n-import { GetCityFailed, GetCitySuccess } from '../actions/actions';\r\n+import {GetAddressSuccess, GetAddressFailed} from '../actions/actions';\r\n import {ACTION_TYPES} from '../constant/actionTypes';\r\n import {AddressUrl} from '../constant/addressUrl';\r\n-const getAddressData = (params: any) => {\r\n-  axios.get(AddressUrl.Province, {params})\r\n-  .then(response => {\r\n+\r\n+const addressReducer = (state: any) => state.AddressReducer;\r\n+const getProvincesData = (params: any) => {\r\n+  axios.get(AddressUrl.Province, {params}).then(response => {\r\n     console.log(response);\r\n   });\r\n };\r\n+const getDitrictData = (data: any) => {\r\n+  axios.get(AddressUrl.District).then(data => {\r\n+    console.log(data);\r\n+  });\r\n+};\r\n+const getWardData = () => {\r\n+  axios.get(AddressUrl.Ward).then(data => {\r\n+    console.log(data);\r\n+  });\r\n+};\r\n function* fetchCity(action: any) {\r\n   try {\r\n-    //Chỗ này gọi api rồi trả về cho reducer\r\n-    console.log(\"VAO DAY ROI\")\r\n-    const data = yield call(getAddressData )\r\n-   if(data){\r\n-     yield put(GetCitySuccess(data))\r\n-   }\r\n+    const addressData = yield select(addressReducer);\r\n+    if (\r\n+      !addressData ||\r\n+      !addressData.provinces ||\r\n+      !addressData.districts ||\r\n+      !addressData.wards\r\n+    ) {\r\n+      console.log('VAO DAY ROI');\r\n+      const provinces = yield call(getProvincesData);\r\n+      const districts = yield call(getDitrictData);\r\n+      const wards = yield call(getWardData);\r\n+      if (provinces && districts && wards) {\r\n+        yield put(GetAddressSuccess({provinces, districts, wards}));\r\n+      }\r\n+    } else {\r\n+      yield put(GetAddressSuccess(addressData));\r\n+    }\r\n   } catch (error) {\r\n-    console.log(error)\r\n+    console.log(error);\r\n     yield put(GetCityFailed(error));\r\n   } finally {\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1652200373853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   axios.get(AddressUrl.Ward).then(data => {\r\n     console.log(data);\r\n   });\r\n };\r\n-function* fetchCity(action: any) {\r\n+function* fetchAddress(action: any) {\r\n   try {\r\n     const addressData = yield select(addressReducer);\r\n     if (\r\n       !addressData ||\r\n@@ -48,15 +48,15 @@\n       yield put(GetAddressSuccess(addressData));\r\n     }\r\n   } catch (error) {\r\n     console.log(error);\r\n-    yield put(GetCityFailed(error));\r\n+    yield put(GetAddressFailed(error));\r\n   } finally {\r\n   }\r\n }\r\n \r\n function* listen() {\r\n-  yield takeLatest(ACTION_TYPES.GET_CITY, fetchCity);\r\n+  yield takeLatest(ACTION_TYPES.GET_ADDRESS, fetchAddress);\r\n }\r\n \r\n export default function* () {\r\n   yield all([listen()]);\r\n"
+                },
+                {
+                    "date": 1652200661462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n   axios.get(AddressUrl.Province, {params}).then(response => {\r\n     console.log(response);\r\n   });\r\n };\r\n-const getDitrictData = (data: any) => {\r\n-  axios.get(AddressUrl.District).then(data => {\r\n+const getDistrictData = (data: any) => {\r\n+  axios.get(AddressUrl.District,data).then(data => {\r\n     console.log(data);\r\n   });\r\n };\r\n const getWardData = () => {\r\n@@ -38,9 +38,9 @@\n       !addressData.wards\r\n     ) {\r\n       console.log('VAO DAY ROI');\r\n       const provinces = yield call(getProvincesData);\r\n-      const districts = yield call(getDitrictData);\r\n+      const districts = yield call(getDistrictData);\r\n       const wards = yield call(getWardData);\r\n       if (provinces && districts && wards) {\r\n         yield put(GetAddressSuccess({provinces, districts, wards}));\r\n       }\r\n"
+                },
+                {
+                    "date": 1652200716316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,16 +29,17 @@\n   });\r\n };\r\n function* fetchAddress(action: any) {\r\n   try {\r\n+    console.log('VAO DAY ROI');\r\n     const addressData = yield select(addressReducer);\r\n     if (\r\n       !addressData ||\r\n       !addressData.provinces ||\r\n       !addressData.districts ||\r\n       !addressData.wards\r\n     ) {\r\n-      console.log('VAO DAY ROI');\r\n+      \r\n       const provinces = yield call(getProvincesData);\r\n       const districts = yield call(getDistrictData);\r\n       const wards = yield call(getWardData);\r\n       if (provinces && districts && wards) {\r\n"
+                },
+                {
+                    "date": 1652200846515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\r\n };\r\n const getDistrictData = (data: any) => {\r\n   axios.get(AddressUrl.District,data).then(data => {\r\n-    console.log(data);\r\n+    console.log(data.data);\r\n   });\r\n };\r\n const getWardData = () => {\r\n   axios.get(AddressUrl.Ward).then(data => {\r\n"
+                },
+                {
+                    "date": 1652200918961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n const addressReducer = (state: any) => state.AddressReducer;\r\n const getProvincesData = (params: any) => {\r\n   axios.get(AddressUrl.Province, {params}).then(response => {\r\n-    console.log(response);\r\n+    console.log(response.data);\r\n   });\r\n };\r\n const getDistrictData = (data: any) => {\r\n   axios.get(AddressUrl.District,data).then(data => {\r\n@@ -24,9 +24,9 @@\n   });\r\n };\r\n const getWardData = () => {\r\n   axios.get(AddressUrl.Ward).then(data => {\r\n-    console.log(data);\r\n+    console.log(data.data);\r\n   });\r\n };\r\n function* fetchAddress(action: any) {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1652201318049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,30 @@\n import axios from 'axios';\r\n import {\r\n   all,\r\n   call,\r\n-  fork,\r\n   put,\r\n-  take,\r\n   takeLatest,\r\n   select,\r\n } from 'redux-saga/effects';\r\n import {GetAddressSuccess, GetAddressFailed} from '../actions/actions';\r\n import {ACTION_TYPES} from '../constant/actionTypes';\r\n import {AddressUrl} from '../constant/addressUrl';\r\n \r\n const addressReducer = (state: any) => state.AddressReducer;\r\n-const getProvincesData = (params: any) => {\r\n-  axios.get(AddressUrl.Province, {params}).then(response => {\r\n-    console.log(response.data);\r\n+const getProvincesData = () => {\r\n+  axios.get(AddressUrl.Province ).then(response => {\r\n+   \r\n   });\r\n };\r\n-const getDistrictData = (data: any) => {\r\n-  axios.get(AddressUrl.District,data).then(data => {\r\n-    console.log(data.data);\r\n+const getDistrictData = () => {\r\n+  axios.get(AddressUrl.District).then(data => {\r\n+   \r\n   });\r\n };\r\n const getWardData = () => {\r\n   axios.get(AddressUrl.Ward).then(data => {\r\n-    console.log(data.data);\r\n+    \r\n   });\r\n };\r\n function* fetchAddress(action: any) {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1652201365720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,17 +35,18 @@\n       !addressData.provinces ||\r\n       !addressData.districts ||\r\n       !addressData.wards\r\n     ) {\r\n-      \r\n+      console.log('ko du lieu')\r\n       const provinces = yield call(getProvincesData);\r\n       const districts = yield call(getDistrictData);\r\n       const wards = yield call(getWardData);\r\n       if (provinces && districts && wards) {\r\n         yield put(GetAddressSuccess({provinces, districts, wards}));\r\n       }\r\n     } else {\r\n       yield put(GetAddressSuccess(addressData));\r\n+      console.log('co du lieu')\r\n     }\r\n   } catch (error) {\r\n     console.log(error);\r\n     yield put(GetAddressFailed(error));\r\n"
+                }
+            ],
+            "date": 1652196164513,
+            "name": "Commit-0",
+            "content": "import axios from 'axios';\r\nimport {\r\n  all,\r\n  call,\r\n  fork,\r\n  put,\r\n  take,\r\n  takeLatest,\r\n  select,\r\n} from 'redux-saga/effects';\r\nimport { GetCityFailed, GetCitySuccess } from '../actions/actions';\r\nimport {ACTION_TYPES} from '../constant/actionTypes';\r\nimport {AddressUrl} from '../constant/addressUrl';\r\nconst getAddressData = (params: any) => {\r\n  axios.get(AddressUrl.Province, {params})\r\n  .then(response => {\r\n    console.log(response);\r\n\r\n\r\n\r\n  });\r\n};\r\nfunction* fetchCity(action: any) {\r\n  try {\r\n    //Chỗ này gọi api rồi trả về cho reducer\r\n\r\n    const data = yield call(getAddressData, params)\r\n   if(data.data){\r\n     yield put(GetCitySuccess(data.data))\r\n   }\r\n  } catch (error) {\r\n    console.log(error)\r\n    yield put(GetCityFailed(error));\r\n  } finally {\r\n  }\r\n}\r\n\r\nfunction* listen() {\r\n  yield takeLatest(ACTION_TYPES.GET_CITY, fetchCity);\r\n}\r\n\r\nexport default function* () {\r\n  yield all([listen()]);\r\n}\r\n"
+        }
+    ]
+}

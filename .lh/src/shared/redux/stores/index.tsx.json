@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/shared/redux/stores/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1652109599520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652109620636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n const persistConfig = {\r\n   key: 'root',\r\n   storage: AsyncStorage,\r\n-  blacklist: ['LoadingData', 'OrderData', 'HistoryData'],\r\n+  blacklist: ['AddressReducer'],\r\n };\r\n \r\n // Middleware: Redux Saga\r\n const sagaMiddleware = createSagaMiddleware();\r\n"
+                },
+                {
+                    "date": 1652109884443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import createSagaMiddleware from 'redux-saga';\r\n // Imports: Redux Root Reducer\r\n import rootReducer from '../reducers';\r\n // Imports: Redux Root Saga\r\n-import rootSaga from '../saga';\r\n+import rootSaga from '../sagas';\r\n \r\n const persistConfig = {\r\n   key: 'root',\r\n   storage: AsyncStorage,\r\n"
+                }
+            ],
+            "date": 1652109599520,
+            "name": "Commit-0",
+            "content": "\r\nimport AsyncStorage from '@react-native-community/async-storage';\r\nimport { applyMiddleware, createStore } from 'redux';\r\nimport { persistReducer, persistStore } from 'redux-persist';\r\nimport createSagaMiddleware from 'redux-saga';\r\n// Imports: Redux Root Reducer\r\nimport rootReducer from '../reducers';\r\n// Imports: Redux Root Saga\r\nimport rootSaga from '../saga';\r\n\r\nconst persistConfig = {\r\n  key: 'root',\r\n  storage: AsyncStorage,\r\n  blacklist: ['LoadingData', 'OrderData', 'HistoryData'],\r\n};\r\n\r\n// Middleware: Redux Saga\r\nconst sagaMiddleware = createSagaMiddleware();\r\n//persist\r\nconst persistedReducer = persistReducer(persistConfig, rootReducer);\r\n\r\n// Redux: Store\r\nconst store = createStore(persistedReducer, applyMiddleware(sagaMiddleware));\r\nlet persistor = persistStore(store);\r\n// Middleware: Redux Saga\r\nsagaMiddleware.run(rootSaga);\r\n// Exports\r\nexport { store, persistor };\r\n"
+        }
+    ]
+}

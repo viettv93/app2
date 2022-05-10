@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/shared/redux/reducers/AddressReducer.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1652198685984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652198708290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n         case ACTION_TYPES.GET_ADDRESS:\r\n             return {\r\n                 ...state,\r\n                 loading_address: true,\r\n-                \r\n             };\r\n         case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n             return {\r\n                 ...state,\r\n"
+                }
+            ],
+            "date": 1652198685984,
+            "name": "Commit-0",
+            "content": "import { ACTION_TYPES } from \"../constant/actionTypes\";\r\n\r\nconst initialState = {\r\n    loading_address: false,\r\n    lstProvince: null,\r\n    lstDistrict: null,\r\n    lstWard: null,\r\n    status: '',\r\n    message: '',\r\n};\r\n\r\nexport default (state = initialState, action: any) => {\r\n    switch (action.type) {\r\n       \r\n        case ACTION_TYPES.GET_ADDRESS:\r\n            return {\r\n                ...state,\r\n                loading_address: true,\r\n                \r\n            };\r\n        case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n            return {\r\n                ...state,\r\n                loading_address: false,\r\n                lstProvince: action.payload.provinces,\r\n                lstDistrict:action.payload.districts,\r\n                lstWard:action.payload.wards\r\n            };\r\n        case ACTION_TYPES.GET_ADDRESS_FAILED:\r\n            return {\r\n                ...state,\r\n                loading_address: false,\r\n                status: action.payload.status,\r\n                message: action.payload.message,\r\n            };\r\n        \r\n        default:\r\n            return state;\r\n    }\r\n};"
+        }
+    ]
+}

@@ -6,7 +6,7 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
        
-      <BottomTabHome />
+      <BottomTabHome/>
       
     </View>
   );

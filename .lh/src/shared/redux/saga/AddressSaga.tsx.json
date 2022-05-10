@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/shared/redux/saga/AddressSaga.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1652108949457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652109268696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,27 @@\n-import axios from \"axios\";\r\n-import {put, call, takeLatest} from 'redux-saga/effects'\r\n-import { AddressUrl } from \"../constant/addressUrl\";\r\n-import { GetCity_Data } from \"../models/customer-infor\";\r\n+import axios from 'axios';\r\n+import {\r\n+  all,\r\n+  call,\r\n+  fork,\r\n+  put,\r\n+  take,\r\n+  takeLatest,\r\n+  select,\r\n+} from 'redux-saga/effects';\r\n+import {ACTION_TYPES} from '../constant/actionTypes';\r\n \r\n+function* fetchCity(action: any) {\r\n+  try {\r\n+  } catch (error) {\r\n+    console.log('CO LOI ROI');\r\n+  } finally {\r\n+  }\r\n+}\r\n+\r\n+function* listen() {\r\n+  yield takeLatest(ACTION_TYPES.GET_CITY, fetchCity);\r\n+}\r\n+\r\n+export default function* () {\r\n+  yield all([listen()]);\r\n+}\r\n"
+                },
+                {
+                    "date": 1652109287515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,11 @@\n import {ACTION_TYPES} from '../constant/actionTypes';\r\n \r\n function* fetchCity(action: any) {\r\n   try {\r\n+      \r\n   } catch (error) {\r\n-    console.log('CO LOI ROI');\r\n+    console.log(error);\r\n   } finally {\r\n   }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1652109340633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n import {ACTION_TYPES} from '../constant/actionTypes';\r\n \r\n function* fetchCity(action: any) {\r\n   try {\r\n-      \r\n+      //Chỗ này gọi api rồi trả về cho reducer\r\n   } catch (error) {\r\n     console.log(error);\r\n   } finally {\r\n   }\r\n"
+                }
+            ],
+            "date": 1652108949457,
+            "name": "Commit-0",
+            "content": "import axios from \"axios\";\r\nimport {put, call, takeLatest} from 'redux-saga/effects'\r\nimport { AddressUrl } from \"../constant/addressUrl\";\r\nimport { GetCity_Data } from \"../models/customer-infor\";\r\n\r\n"
+        }
+    ]
+}

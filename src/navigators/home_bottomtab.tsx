@@ -16,6 +16,9 @@ import TimBuuCuc from '../view/screens/timBuuCuc/Component';
 import Doanh_thu from '../view/screens/doanhthu/Component';
 import HoaHong from '../view/screens/hoahong/Component';
 import Kho_hang from '../view/screens/khohang/Component';
+import {PersistGate} from 'redux-persist/integration/react';
+import { persistor, store } from '../shared/redux/stores';
+import {Provider} from 'react-redux';
 
 const AppStack = createNativeStackNavigator();
 const AppTab = createBottomTabNavigator();
@@ -132,50 +135,54 @@ const BottomTabHome = () => {
     );
   };
   return (
-    <NavigationContainer>
-      <AppStack.Navigator>
-        <AppStack.Screen
-          name="Main"
-          component={BottomTab}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="order"
-          component={Don_Hang}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="money"
-          component={Tien_Hang}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="search"
-          component={TimBuuCuc}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="turnover"
-          component={Doanh_thu}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="create order"
-          component={TaoDon}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="poundage"
-          component={HoaHong}
-          options={{headerShown: false}}
-        />
-        <AppStack.Screen
-          name="warehouse"
-          component={Kho_hang}
-          options={{headerShown: false}}
-        />
-      </AppStack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <NavigationContainer>
+        <AppStack.Navigator>
+          <AppStack.Screen
+            name="Main"
+            component={BottomTab}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="order"
+            component={Don_Hang}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="money"
+            component={Tien_Hang}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="search"
+            component={TimBuuCuc}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="turnover"
+            component={Doanh_thu}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="create order"
+            component={TaoDon}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="poundage"
+            component={HoaHong}
+            options={{headerShown: false}}
+          />
+          <AppStack.Screen
+            name="warehouse"
+            component={Kho_hang}
+            options={{headerShown: false}}
+          />
+        </AppStack.Navigator>
+      </NavigationContainer>
+    </PersistGate>
+    </Provider>
   );
 };
 
