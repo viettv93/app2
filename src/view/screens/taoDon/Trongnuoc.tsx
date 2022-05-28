@@ -11,14 +11,17 @@ import Checkbox from '../../../components/Checkbox';
 import {useDispatch, useSelector} from 'react-redux';
 import {colors, fonts, fontSize} from '../../styles/typography';
 import { GetAddress } from '../../../shared/redux/actions/actions';
+import realm from '../../../shared/realm/realm-utils'
+
 
 const Domestic = () => {
+  
   const dispatch = useDispatch();
   const onPostOfficeChange = (value: boolean) => {};
   const getAddressReceiver = (props: any) => {
-    dispatch(GetAddress())
-    
-    ;
+    dispatch(GetAddress(), )
+   
+
   };
   return (
     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>

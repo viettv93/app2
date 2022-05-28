@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 107,
+            "activePatchIndex": 125,
             "patches": [
                 {
                     "date": 1651422813724,
@@ -436,6 +436,78 @@
                 {
                     "date": 1652204439815,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,11 @@\n const Domestic = () => {\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n-    dispatch(GetAddress());\r\n+    dispatch(GetAddress())\r\n+    \r\n+    ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n       <TouchableOpacity>\r\n"
+                },
+                {
+                    "date": 1652627530424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,11 @@\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n     \r\n+\r\n+\r\n+    \r\n     ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n"
+                },
+                {
+                    "date": 1652629588155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,12 @@\n import {useDispatch, useSelector} from 'react-redux';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import { GetAddress } from '../../../shared/redux/actions/actions';\r\n \r\n+\r\n+\r\n const Domestic = () => {\r\n+  // const addressUser = useSelector(=> state.addressReducer)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652630657381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,18 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  // const addressUser = useSelector(=> state.addressReducer)\r\n+  const add =useSelector((state : any)=> state.addressData)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n-    \r\n+    return(\r\n+      <View>\r\n+        <Text>{add}</Text>\r\n+      </View>\r\n+    )\r\n \r\n \r\n     \r\n     ;\r\n"
+                },
+                {
+                    "date": 1652630698337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,9 @@\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n-    return(\r\n-      <View>\r\n-        <Text>{add}</Text>\r\n-      </View>\r\n-    )\r\n+    console.log(JSON.stringify(add))\r\n \r\n \r\n     \r\n     ;\r\n"
+                },
+                {
+                    "date": 1652630782565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add =useSelector((state : any)=> state.addressData)\r\n+  const add = useSelector((state : any)=> state.loading_address)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652630809038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.loading_address)\r\n+  const add = useSelector((state : any)=> state.lstProvince)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652630967822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.lstProvince)\r\n+  const add = useSelector((state : any)=> state.action)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652631037834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.action)\r\n+  const add = useSelector((state : any)=> state.lstProvince)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652631520907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,16 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.lstProvince)\r\n+  const add = useSelector((state : any)=> state.RootReducer)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n+\r\n+\r\n+\r\n     console.log(JSON.stringify(add))\r\n \r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1652631687408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.RootReducer)\r\n+  const add = useSelector((state : any)=> state.persistedReducer)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n"
+                },
+                {
+                    "date": 1652633015855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,24 +10,24 @@\n import Checkbox from '../../../components/Checkbox';\r\n import {useDispatch, useSelector} from 'react-redux';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import { GetAddress } from '../../../shared/redux/actions/actions';\r\n+import AsyncStorage from '@react-native-community/async-storage';\r\n \r\n \r\n-\r\n const Domestic = () => {\r\n   const add = useSelector((state : any)=> state.persistedReducer)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n+    \r\n \r\n \r\n-\r\n-    console.log(JSON.stringify(add))\r\n-\r\n-\r\n     \r\n+  const data = AsyncStorage.getItem('address')\r\n+console.log(data)\r\n+    \r\n     ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n"
+                },
+                {
+                    "date": 1653057905873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,10 @@\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n     \r\n-\r\n-\r\n+   console.log(data)\r\n     \r\n-  const data = AsyncStorage.getItem('address')\r\n-console.log(data)\r\n-    \r\n     ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n"
+                },
+                {
+                    "date": 1653057936459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n     \r\n-   console.log(data)\r\n+  //  console.log(data)\r\n     \r\n     ;\r\n   };\r\n   return (\r\n"
+                },
+                {
+                    "date": 1653756771470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,20 +10,21 @@\n import Checkbox from '../../../components/Checkbox';\r\n import {useDispatch, useSelector} from 'react-redux';\r\n import {colors, fonts, fontSize} from '../../styles/typography';\r\n import { GetAddress } from '../../../shared/redux/actions/actions';\r\n-import AsyncStorage from '@react-native-community/async-storage';\r\n+import realm from '../../../shared/realm/realm-utils'\r\n \r\n \r\n const Domestic = () => {\r\n   const add = useSelector((state : any)=> state.persistedReducer)\r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n+     realm.getProvinces()\r\n+     console.log(props) \r\n+   \r\n     \r\n-  //  console.log(data)\r\n-    \r\n     ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n"
+                },
+                {
+                    "date": 1653756822226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n      realm.getProvinces()\r\n-     console.log(props) \r\n+     console.log(props.provinces) \r\n    \r\n     \r\n     ;\r\n   };\r\n"
+                },
+                {
+                    "date": 1653756847896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n      realm.getProvinces()\r\n-     console.log(props.provinces) \r\n+     \r\n    \r\n     \r\n     ;\r\n   };\r\n"
+                },
+                {
+                    "date": 1653761224603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,18 +14,14 @@\n import realm from '../../../shared/realm/realm-utils'\r\n \r\n \r\n const Domestic = () => {\r\n-  const add = useSelector((state : any)=> state.persistedReducer)\r\n+  \r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n     dispatch(GetAddress())\r\n-     realm.getProvinces()\r\n-     \r\n-   \r\n     \r\n-    ;\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n       <TouchableOpacity>\r\n"
+                },
+                {
+                    "date": 1653761475168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,11 @@\n   \r\n   const dispatch = useDispatch();\r\n   const onPostOfficeChange = (value: boolean) => {};\r\n   const getAddressReceiver = (props: any) => {\r\n-    dispatch(GetAddress())\r\n-    \r\n+    dispatch(GetAddress(), )\r\n+   \r\n+\r\n   };\r\n   return (\r\n     <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 12}}>\r\n       <TouchableOpacity>\r\n"
                 }
             ],
             "date": 1651422813724,

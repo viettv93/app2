@@ -18,6 +18,7 @@ export default (state = initialState, action: any) => {
                 loading_address: true,
             };
         case ACTION_TYPES.GET_ADDRESS_SUCCESS:
+            
             return {
                 ...state,
                 loading_address: false,

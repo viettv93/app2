@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1652198685984,
@@ -12,6 +12,18 @@
                 {
                     "date": 1652198708290,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n         case ACTION_TYPES.GET_ADDRESS:\r\n             return {\r\n                 ...state,\r\n                 loading_address: true,\r\n-                \r\n             };\r\n         case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n             return {\r\n                 ...state,\r\n"
+                },
+                {
+                    "date": 1652627526900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n                 ...state,\r\n                 loading_address: true,\r\n             };\r\n         case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n+            console.log('THONG TIN TAI REDUCER', JSON.stringify(action))\r\n             return {\r\n                 ...state,\r\n                 loading_address: false,\r\n                 lstProvince: action.payload.provinces,\r\n"
+                },
+                {
+                    "date": 1652628200674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n                 ...state,\r\n                 loading_address: true,\r\n             };\r\n         case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n-            console.log('THONG TIN TAI REDUCER', JSON.stringify(action))\r\n+            console.log('THONG TIN TAI REDUCER')\r\n             return {\r\n                 ...state,\r\n                 loading_address: false,\r\n                 lstProvince: action.payload.provinces,\r\n"
+                },
+                {
+                    "date": 1652628213493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n                 ...state,\r\n                 loading_address: true,\r\n             };\r\n         case ACTION_TYPES.GET_ADDRESS_SUCCESS:\r\n-            console.log('THONG TIN TAI REDUCER')\r\n+            \r\n             return {\r\n                 ...state,\r\n                 loading_address: false,\r\n                 lstProvince: action.payload.provinces,\r\n"
                 }
             ],
             "date": 1652198685984,

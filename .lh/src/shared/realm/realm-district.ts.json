@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/shared/realm/realm-district.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1652974735982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652974786814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n-class District extends Realm.Object {}\r\n- District.schema ={\r\n+\r\n+import Realm from \"realm\";\r\n+ class District extends Realm.Object {}\r\n+  District.schema ={\r\n     name: \"District\",\r\n     properties :{\r\n         DISTRICT_ID :'int?',\r\n         DISTRICT_VALUE: 'int?',\r\n"
+                },
+                {
+                    "date": 1652976694336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n \r\n import Realm from \"realm\";\r\n- class District extends Realm.Object {}\r\n-  District.schema ={\r\n+ class Address extends Realm.Object {}\r\n+  Address.schema ={\r\n+    \r\n     name: \"District\",\r\n     properties :{\r\n         DISTRICT_ID :'int?',\r\n         DISTRICT_VALUE: 'int?',\r\n         DISTRICT_NAME: 'string',\r\n         PROVINCE_ID: 'int?',\r\n         VALUE: 'string'\r\n-    }\r\n+    },\r\n  }\r\n   \r\n- export default new Realm({schema:[District]})\r\n+ export default new Realm({schema:[Address]})\r\n"
+                },
+                {
+                    "date": 1653749431564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,7 @@\n import Realm from \"realm\";\r\n  class Address extends Realm.Object {}\r\n   Address.schema ={\r\n     \r\n-    name: \"District\",\r\n-    properties :{\r\n-        DISTRICT_ID :'int?',\r\n-        DISTRICT_VALUE: 'int?',\r\n-        DISTRICT_NAME: 'string',\r\n-        PROVINCE_ID: 'int?',\r\n-        VALUE: 'string'\r\n-    },\r\n- }\r\n+   \r\n   \r\n  export default new Realm({schema:[Address]})\r\n"
+                }
+            ],
+            "date": 1652974735982,
+            "name": "Commit-0",
+            "content": "class District extends Realm.Object {}\r\n District.schema ={\r\n    name: \"District\",\r\n    properties :{\r\n        DISTRICT_ID :'int?',\r\n        DISTRICT_VALUE: 'int?',\r\n        DISTRICT_NAME: 'string',\r\n        PROVINCE_ID: 'int?',\r\n        VALUE: 'string'\r\n    }\r\n }\r\n  \r\n export default new Realm({schema:[District]})\r\n"
+        }
+    ]
+}

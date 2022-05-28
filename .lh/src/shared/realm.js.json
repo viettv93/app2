@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/shared/realm.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1652634517429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652635318888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n+import realm from 'realm/realm'\r\n+\r\n+\r\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Province\",\r\n     properties: {\r\n@@ -10,5 +13,25 @@\n     },\r\n     primaryKey: \" PROVINCE_ID\",\r\n };\r\n \r\n-export default new Realm({ schema: [Provinces] });\n\\ No newline at end of file\n+export default new Realm({ schema: [Provinces] });\r\n+\r\n+ saveProvinces= () =>{\r\n+    \r\n+    Provinces.getAll()\r\n+    .then(provinces => {\r\n+        \r\n+        provinces.forEach(provinces => {\r\n+            realm.write(() => {\r\n+                realm.create(\"Provinces\", {\r\n+                    PROVINCE_ID: provinces.PROVINCE_ID,\r\n+                    PROVINCE_CODE: provinces.thumbnailPath,\r\n+                    PROVINCE_NAME: provinces.givenName,\r\n+                    VALUE: provinces.familyName,\r\n+                }, UpdateMode.Modified);\r\n+            });\r\n+        })\r\n+    }).then(() => console.log(\"Province update\"));\r\n+\r\n+Contacts.checkPermission();\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652635476526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,18 +20,18 @@\n     \r\n     Provinces.getAll()\r\n     .then(provinces => {\r\n         \r\n-        provinces.forEach(provinces => {\r\n+        provinces.forEach(province => {\r\n             realm.write(() => {\r\n                 realm.create(\"Provinces\", {\r\n-                    PROVINCE_ID: provinces.PROVINCE_ID,\r\n-                    PROVINCE_CODE: provinces.thumbnailPath,\r\n-                    PROVINCE_NAME: provinces.givenName,\r\n-                    VALUE: provinces.familyName,\r\n+                    PROVINCE_ID: province.PROVINCE_ID,\r\n+                    PROVINCE_CODE: province.thumbnailPath,\r\n+                    PROVINCE_NAME: province.givenName,\r\n+                    VALUE: province.familyName,\r\n                 }, UpdateMode.Modified);\r\n             });\r\n\\ No newline at end of file\n         })\r\n     }).then(() => console.log(\"Province update\"));\r\n \r\n Contacts.checkPermission();\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1652635806578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,24 +14,4 @@\n     primaryKey: \" PROVINCE_ID\",\r\n };\r\n \r\n export default new Realm({ schema: [Provinces] });\r\n-\r\n- saveProvinces= () =>{\r\n-    \r\n-    Provinces.getAll()\r\n-    .then(provinces => {\r\n-        \r\n-        provinces.forEach(province => {\r\n-            realm.write(() => {\r\n-                realm.create(\"Provinces\", {\r\n-                    PROVINCE_ID: province.PROVINCE_ID,\r\n-                    PROVINCE_CODE: province.thumbnailPath,\r\n-                    PROVINCE_NAME: province.givenName,\r\n-                    VALUE: province.familyName,\r\n-                }, UpdateMode.Modified);\r\n-            });\r\n-        })\r\n-    }).then(() => console.log(\"Province update\"));\r\n-\r\n-Contacts.checkPermission();\r\n-}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1652634517429,
+            "name": "Commit-0",
+            "content": "class Provinces extends Realm.Object {}\r\nProvinces.schema = {\r\n    name: \"Province\",\r\n    properties: {\r\n        PROVINCE_ID: \"number\",\r\n        PROVINCE_CODE: \"string?\",\r\n        PROVINCE_NAME: \"string\",\r\n        VALUE: \"string\",\r\n        \r\n    },\r\n    primaryKey: \" PROVINCE_ID\",\r\n};\r\n\r\nexport default new Realm({ schema: [Provinces] });"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "sourceFile": "src/shared/realm/realm-provinces.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1652974837752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653749427768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,37 @@\n+import Realm from 'realm';\r\n \r\n-import Realm from \"realm\";\r\n+const Provinces = {\r\n+  name: 'Provinces',\r\n+  properties: {\r\n+    PROVINCE_ID: 'int?',\r\n+    PROVINCE_CODE: 'string?',\r\n+    PROVINCE_NAME: 'string',\r\n+    VALUE: 'string',\r\n+  },\r\n+};\r\n+const Wards = {\r\n+  name: 'Wards',\r\n+  properties: {\r\n+    WARDS_ID: 'int?',\r\n+    WARDS_NAME: 'string',\r\n+    DISTRICT_ID: 'int?',\r\n+    LOCATION_CODE: 'int?',\r\n\\ No newline at end of file\n+  },\r\n+};\r\n \r\n-class Provinces extends Realm.Object {}\r\n-Provinces.schema = {\r\n-    name: \"Provinces\",\r\n-    properties: {\r\n-        PROVINCE_ID: \"int?\",\r\n-        PROVINCE_CODE: \"string?\",\r\n-        PROVINCE_NAME: \"string\",\r\n-        VALUE: \"string\",\r\n-        \r\n-    }\r\n-}\r\n-export default new Realm({ schema: [Provinces] })\r\n- \r\n+const Districts = {\r\n+  name: 'District',\r\n+  properties: {\r\n+    DISTRICT_ID: 'int?',\r\n+    DISTRICT_VALUE: 'int?',\r\n+    DISTRICT_NAME: 'string',\r\n+    PROVINCE_ID: 'int?',\r\n+    VALUE: 'string',\r\n+  },\r\n+};\r\n \r\n+const Address = await Realm.open({\r\n+    schema:[Provinces,Districts,Wards]\r\n+})\r\n \r\n- \n+export default ({schema: [Address]});\r\n"
+                },
+                {
+                    "date": 1653749434201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = await Realm.open({\r\n     schema:[Provinces,Districts,Wards]\r\n })\r\n \r\n-export default ({schema: [Address]});\n\\ No newline at end of file\n+export default ({schema: [Address]});\r\n"
+                },
+                {
+                    "date": 1653749451973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = await Realm.open({\r\n     schema:[Provinces,Districts,Wards]\r\n })\r\n \r\n-export default ({schema: [Address]});\r\n+export default ({schema: [Address]})\r\n"
+                },
+                {
+                    "date": 1653749706253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,8 @@\n   },\r\n };\r\n \r\n const Address = await Realm.open({\r\n-    schema:[Provinces,Districts,Wards]\r\n-})\r\n+  schema: [Provinces, Districts, Wards],\r\n+});\r\n \r\n-export default ({schema: [Address]})\r\n+export default Address;\r\n"
+                },
+                {
+                    "date": 1653749745342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-const Address = await Realm.open({\r\n+const realm = await Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default Address;\r\n+export default realm;\r\n"
+                },
+                {
+                    "date": 1653749820955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-const realm = await Realm.open({\r\n+const realm = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n export default realm;\r\n"
+                },
+                {
+                    "date": 1653749935786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-const realm = Realm.open({\r\n+const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default realm;\r\n+export default Address;\r\n"
+                },
+                {
+                    "date": 1653750173324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default Address;\r\n+export default new Realm ({schema: [Address]});\r\n"
+                },
+                {
+                    "date": 1653750201583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: [Address]});\r\n+export default new Realm ({schema: ['Address']});\r\n"
+                },
+                {
+                    "date": 1653750212389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: ['Address']});\r\n+export default new Realm ({schema: 'Address'});\r\n"
+                },
+                {
+                    "date": 1653750226340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: 'Address'});\r\n+export default new Realm ({schema: ['Address']});\r\n"
+                },
+                {
+                    "date": 1653750234468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: ['Address']});\r\n+export default new Realm ({schema: [Address]});\r\n"
+                },
+                {
+                    "date": 1653750270604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: [Address]});\r\n+export default new Realm ({schema: [{Address}]});\r\n"
+                },
+                {
+                    "date": 1653750284366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: [{Address}]});\r\n+export default new Realm ({schema: [Address]});\r\n"
+                },
+                {
+                    "date": 1653750340553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n const Address = Realm.open({\r\n   schema: [Provinces, Districts, Wards],\r\n });\r\n \r\n-export default new Realm ({schema: [Address]});\r\n+export default new Realm ({schema: [Provinces,Districts,Wards]});\r\n"
+                },
+                {
+                    "date": 1653750434599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,7 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-const Address = Realm.open({\r\n-  schema: [Provinces, Districts, Wards],\r\n-});\r\n \r\n+\r\n export default new Realm ({schema: [Provinces,Districts,Wards]});\r\n"
+                },
+                {
+                    "date": 1653752142076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,17 +19,15 @@\n   },\r\n };\r\n \r\n const Districts = {\r\n-  name: 'District',\r\n+  name: 'Districts',\r\n   properties: {\r\n     DISTRICT_ID: 'int?',\r\n     DISTRICT_VALUE: 'int?',\r\n     DISTRICT_NAME: 'string',\r\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n };\r\n-\r\n-\r\n-\r\n-export default new Realm ({schema: [Provinces,Districts,Wards]});\r\n+const address = Realm.open({schema: [Provinces,Districts,Wards]})\r\n+export default new Realm ({ schema:[address]});\r\n"
+                },
+                {
+                    "date": 1653752183548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n };\r\n-const address = Realm.open({schema: [Provinces,Districts,Wards]})\r\n-export default new Realm ({ schema:[address]});\r\n+const Address = Realm.open({schema: [Provinces,Districts,Wards]})\r\n+export default new Realm ({ schema:[Address]});\r\n"
+                },
+                {
+                    "date": 1653752261023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n };\r\n-const Address = Realm.open({schema: [Provinces,Districts,Wards]})\r\n+const Address =  await Realm.open({schema: [Provinces,Districts,Wards]})\r\n export default new Realm ({ schema:[Address]});\r\n"
+                },
+                {
+                    "date": 1653752267985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n };\r\n-const Address =  await Realm.open({schema: [Provinces,Districts,Wards]})\r\n+const Address =  Realm.open({schema: [Provinces,Districts,Wards]})\r\n export default new Realm ({ schema:[Address]});\r\n"
+                },
+                {
+                    "date": 1653752391030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n };\r\n-const Address =  Realm.open({schema: [Provinces,Districts,Wards]})\r\n-export default new Realm ({ schema:[Address]});\r\n+\r\n+export default new Realm.open({schema: [Provinces,Districts,Wards]})\r\n"
+                },
+                {
+                    "date": 1653752398108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,5 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-export default new Realm.open({schema: [Provinces,Districts,Wards]})\r\n+export default Realm.open({schema: [Provinces,Districts,Wards]})\r\n"
+                },
+                {
+                    "date": 1653752433005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,5 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-export default Realm.open({schema: [Provinces,Districts,Wards]})\r\n+export default new Realm ({schema: [Provinces,Districts,Wards]});\r\n"
+                },
+                {
+                    "date": 1653753018731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,5 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-export default new Realm ({schema: [Provinces,Districts,Wards]});\r\n+export default new Realm({schema: [Provinces, Districts, Wards]});\r\n"
+                },
+                {
+                    "date": 1653753548923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,43 @@\n-import Realm from 'realm';\r\n+// import Realm from 'realm';\r\n \r\n-const Provinces = {\r\n-  name: 'Provinces',\r\n-  properties: {\r\n-    PROVINCE_ID: 'int?',\r\n-    PROVINCE_CODE: 'string?',\r\n-    PROVINCE_NAME: 'string',\r\n-    VALUE: 'string',\r\n-  },\r\n-};\r\n-const Wards = {\r\n-  name: 'Wards',\r\n-  properties: {\r\n-    WARDS_ID: 'int?',\r\n-    WARDS_NAME: 'string',\r\n-    DISTRICT_ID: 'int?',\r\n-    LOCATION_CODE: 'int?',\r\n-  },\r\n-};\r\n+// const Provinces = {\r\n+//   name: 'Provinces',\r\n+//   properties: {\r\n+//     PROVINCE_ID: 'int?',\r\n+//     PROVINCE_CODE: 'string?',\r\n+//     PROVINCE_NAME: 'string',\r\n+//     VALUE: 'string',\r\n+//   },\r\n+// };\r\n+// const Wards = {\r\n+//   name: 'Wards',\r\n+//   properties: {\r\n+//     WARDS_ID: 'int?',\r\n+//     WARDS_NAME: 'string',\r\n+//     DISTRICT_ID: 'int?',\r\n+//     LOCATION_CODE: 'int?',\r\n+//   },\r\n+// };\r\n \r\n-const Districts = {\r\n-  name: 'Districts',\r\n-  properties: {\r\n-    DISTRICT_ID: 'int?',\r\n-    DISTRICT_VALUE: 'int?',\r\n-    DISTRICT_NAME: 'string',\r\n-    PROVINCE_ID: 'int?',\r\n-    VALUE: 'string',\r\n-  },\r\n-};\r\n+// const Districts = {\r\n+//   name: 'Districts',\r\n+//   properties: {\r\n+//     DISTRICT_ID: 'int?',\r\n+//     DISTRICT_VALUE: 'int?',\r\n+//     DISTRICT_NAME: 'string',\r\n+//     PROVINCE_ID: 'int?',\r\n+//     VALUE: 'string',\r\n+//   },\r\n+// };\r\n \r\n-export default new Realm({schema: [Provinces, Districts, Wards]});\r\n+// export default new Realm({schema: [Provinces, Districts, Wards]});\r\n+\r\n+const TaskSchema = {\r\n+    name: \"Task\",\r\n+    properties: {\r\n+      _id: \"int\",\r\n+      name: \"string\",\r\n+      status: \"string?\",\r\n+    },\r\n+    primaryKey: \"_id\",\r\n+  };\r\n"
+                }
+            ],
+            "date": 1652974837752,
+            "name": "Commit-0",
+            "content": "\r\nimport Realm from \"realm\";\r\n\r\nclass Provinces extends Realm.Object {}\r\nProvinces.schema = {\r\n    name: \"Provinces\",\r\n    properties: {\r\n        PROVINCE_ID: \"int?\",\r\n        PROVINCE_CODE: \"string?\",\r\n        PROVINCE_NAME: \"string\",\r\n        VALUE: \"string\",\r\n        \r\n    }\r\n}\r\nexport default new Realm({ schema: [Provinces] })\r\n \r\n\r\n\r\n "
+        }
+    ]
+}

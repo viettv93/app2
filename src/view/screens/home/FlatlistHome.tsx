@@ -11,6 +11,7 @@ import {
 import {colors, fonts, fontSize} from '../../styles/typography';
 import Styles from './Styles';
 import Screen from '../../../constants/Screen';
+import realmUtils from "../../../shared/realm/realm-utils"
 const {width, height} = Dimensions.get('screen');
 
 const array1 = [
@@ -42,6 +43,8 @@ const FlatListHome = (props) => {
             else if (item.id ==='turnover')( props.navigation.navigate('turnover'))
             else if (item.id ==='poundage')( props.navigation.navigate('poundage'))
             else  props.navigation.navigate('warehouse')
+          
+
         }}>
           <Image
             source={item.img}

@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/shared/realm.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1652635910128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652636046738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n \r\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n-    name: \"Province\",\r\n+    name: \"Provinces\",\r\n     properties: {\r\n         PROVINCE_ID: \"number\",\r\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n"
+                },
+                {
+                    "date": 1652636675792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Provinces\",\r\n     properties: {\r\n-        PROVINCE_ID: \"number\",\r\n+        PROVINCE_ID: \"int\",\r\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n"
+                },
+                {
+                    "date": 1652636717705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Provinces\",\r\n     properties: {\r\n-        PROVINCE_ID: \"int\",\r\n+        PROVINCE_ID: \"string\",\r\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n"
+                },
+                {
+                    "date": 1652636733029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n-    },\r\n-    primaryKey: \" PROVINCE_ID\",\r\n+    }\r\n };\r\n \r\n export default new Realm({ schema: [Provinces] });\r\n"
+                },
+                {
+                    "date": 1652637114418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Provinces\",\r\n     properties: {\r\n-        PROVINCE_ID: \"string\",\r\n+        PROVINCE_ID: \"number\",\r\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n"
+                },
+                {
+                    "date": 1652637138757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Provinces\",\r\n     properties: {\r\n-        PROVINCE_ID: \"number\",\r\n+        PROVINCE_ID: \"int?\",\r\n         PROVINCE_CODE: \"string?\",\r\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n"
+                },
+                {
+                    "date": 1652972999275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n \r\n import Realm from \"realm\";\r\n \r\n-\r\n class Provinces extends Realm.Object {}\r\n Provinces.schema = {\r\n     name: \"Provinces\",\r\n     properties: {\r\n@@ -14,4 +13,19 @@\n     }\r\n };\r\n \r\n export default new Realm({ schema: [Provinces] });\r\n+\r\n+\r\n+class District extends Realm.Object {}\r\n+ District.schema ={\r\n+    name: \"District\",\r\n+    properties :{\r\n+        DISTRICT_ID :'int?',\r\n+        DISTRICT_VALUE: 'int?',\r\n+        DISTRICT_NAME: 'string',\r\n+        PROVINCE_ID: 'int?',\r\n+        VALUE: 'string'\r\n+    }\r\n+\r\n+ }\r\n+ export r Realm({schema:[District]})\r\n"
+                },
+                {
+                    "date": 1652973006301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         VALUE: 'string'\r\n     }\r\n \r\n  }\r\n- export r Realm({schema:[District]})\r\n+ export  Realm({schema:[District]})\r\n"
+                },
+                {
+                    "date": 1652973037483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         VALUE: 'string'\r\n     }\r\n \r\n  }\r\n- export  Realm({schema:[District]})\r\n+ export  { new Realm({schema:[District]})}\r\n"
+                },
+                {
+                    "date": 1652973043226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         VALUE: 'string'\r\n     }\r\n \r\n  }\r\n- export  { new Realm({schema:[District]})}\r\n+ export  { Realm({schema:[District]})}\r\n"
+                },
+                {
+                    "date": 1652973773545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,13 @@\n         VALUE: \"string\",\r\n         \r\n     }\r\n };\r\n+const Provinces = new Realm({ schema: [Provinces] })\r\n+ \r\n \r\n-export default new Realm({ schema: [Provinces] });\r\n \r\n-\r\n-class District extends Realm.Object {}\r\n+ class District extends Realm.Object {}\r\n  District.schema ={\r\n     name: \"District\",\r\n     properties :{\r\n         DISTRICT_ID :'int?',\r\n@@ -25,7 +25,7 @@\n         DISTRICT_NAME: 'string',\r\n         PROVINCE_ID: 'int?',\r\n         VALUE: 'string'\r\n     }\r\n-\r\n  }\r\n- export  { Realm({schema:[District]})}\r\n+ const District = new Realm({schema:[District]})\r\n+ export  { District}\r\n"
+                },
+                {
+                    "date": 1652973789354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         VALUE: 'string'\r\n     }\r\n  }\r\n  const District = new Realm({schema:[District]})\r\n- export  { District}\r\n+ export  { District , Provinces}\r\n"
+                },
+                {
+                    "date": 1652973820805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         PROVINCE_NAME: \"string\",\r\n         VALUE: \"string\",\r\n         \r\n     }\r\n-};\r\n+}\r\n const Provinces = new Realm({ schema: [Provinces] })\r\n  \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1652973844575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         VALUE: \"string\",\r\n         \r\n     }\r\n }\r\n-const Provinces = new Realm({ schema: [Provinces] })\r\n+const Province = new Realm({ schema: [Provinces] })\r\n  \r\n \r\n \r\n  class District extends Realm.Object {}\r\n@@ -26,6 +26,6 @@\n         PROVINCE_ID: 'int?',\r\n         VALUE: 'string'\r\n     }\r\n  }\r\n- const District = new Realm({schema:[District]})\r\n- export  { District , Provinces}\r\n+ const Districts = new Realm({schema:[District]})\r\n+ export  { Districts , Province}\r\n"
+                },
+                {
+                    "date": 1652973904665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         VALUE: \"string\",\r\n         \r\n     }\r\n }\r\n-const Province = new Realm({ schema: [Provinces] })\r\n+export default new Realm({ schema: [Provinces] })\r\n  \r\n \r\n \r\n  class District extends Realm.Object {}\r\n@@ -26,6 +26,6 @@\n         PROVINCE_ID: 'int?',\r\n         VALUE: 'string'\r\n     }\r\n  }\r\n- const Districts = new Realm({schema:[District]})\r\n- export  { Districts , Province}\r\n+  \r\n+ export new Realm({schema:[District]})\r\n"
+                },
+                {
+                    "date": 1652973916766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         VALUE: 'string'\r\n     }\r\n  }\r\n   \r\n- export new Realm({schema:[District]})\r\n+ export {new Realm({schema:[District]})}\r\n"
+                },
+                {
+                    "date": 1652974748466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,5 @@\n export default new Realm({ schema: [Provinces] })\r\n  \r\n \r\n \r\n- class District extends Realm.Object {}\r\n- District.schema ={\r\n-    name: \"District\",\r\n-    properties :{\r\n-        DISTRICT_ID :'int?',\r\n-        DISTRICT_VALUE: 'int?',\r\n-        DISTRICT_NAME: 'string',\r\n-        PROVINCE_ID: 'int?',\r\n-        VALUE: 'string'\r\n-    }\r\n- }\r\n-  \r\n- export {new Realm({schema:[District]})}\r\n+ \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1652635910128,
+            "name": "Commit-0",
+            "content": "\r\nimport Realm from \"realm\";\r\n\r\n\r\nclass Provinces extends Realm.Object {}\r\nProvinces.schema = {\r\n    name: \"Province\",\r\n    properties: {\r\n        PROVINCE_ID: \"number\",\r\n        PROVINCE_CODE: \"string?\",\r\n        PROVINCE_NAME: \"string\",\r\n        VALUE: \"string\",\r\n        \r\n    },\r\n    primaryKey: \" PROVINCE_ID\",\r\n};\r\n\r\nexport default new Realm({ schema: [Provinces] });\r\n"
+        }
+    ]
+}

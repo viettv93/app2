@@ -1,0 +1,114 @@
+{
+    "sourceFile": "src/shared/realm/realm-utils.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1653754113880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653754413884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,5 +46,16 @@\n     })\r\n   })\r\n }\r\n \r\n+const getProvinces = async() => {\r\n+\r\n+  const realm = await Realm.open({\r\n+    schema: [provinces],\r\n+  });\r\n+\r\n+  const tasks = realm.objects(\"provinces\");\r\n+\r\n+  return tasks\r\n+}\r\n+\r\n export default {saveProvinces}\r\n"
+                },
+                {
+                    "date": 1653754452359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,10 @@\n     schema: [provinces],\r\n   });\r\n \r\n   const tasks = realm.objects(\"provinces\");\r\n-\r\n+  console.log(\"REALM OBJECTS\", tasks);\r\n+  \r\n   return tasks\r\n }\r\n \r\n export default {saveProvinces}\r\n"
+                },
+                {
+                    "date": 1653754471042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,5 +58,5 @@\n   \r\n   return tasks\r\n }\r\n \r\n-export default {saveProvinces}\r\n+export default {saveProvinces, getProvinces}\r\n"
+                },
+                {
+                    "date": 1653754546692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,13 +37,11 @@\n     schema: [provinces],\r\n   });\r\n \r\n   realm.write(() => {\r\n-    listProvinces?.map((e: any) => {\r\n-      realm.create(\"provinces\", {\r\n-        id: \"1\",\r\n-        value: \"test\"\r\n-      })\r\n+    realm.create(\"provinces\", {\r\n+      id: \"1\",\r\n+      value: \"test\"\r\n     })\r\n   })\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1653754683181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,21 +29,40 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n+const TaskSchema = {\r\n+  name: \"Task\",\r\n+  properties: {\r\n+    _id: \"int\",\r\n+    name: \"string\",\r\n+    status: \"string?\",\r\n+  },\r\n+  primaryKey: \"_id\",\r\n+};\r\n \r\n \r\n+\r\n const saveProvinces = async(listProvinces: any) => {\r\n   const realm = await Realm.open({\r\n-    schema: [provinces],\r\n+    path: \"myrealm\",\r\n+    schema: [TaskSchema],\r\n   });\r\n \r\n+  let task1, task2;\r\n   realm.write(() => {\r\n-    realm.create(\"provinces\", {\r\n-      id: \"1\",\r\n-      value: \"test\"\r\n-    })\r\n-  })\r\n+    task1 = realm.create(\"Task\", {\r\n+      _id: 1,\r\n+      name: \"go grocery shopping\",\r\n+      status: \"Open\",\r\n+    });\r\n+    task2 = realm.create(\"Task\", {\r\n+      _id: 2,\r\n+      name: \"go exercise\",\r\n+      status: \"Open\",\r\n+    });\r\n+    console.log(`created two tasks: ${task1.name} & ${task2.name}`);\r\n+  });\r\n }\r\n \r\n const getProvinces = async() => {\r\n \r\n"
+                },
+                {
+                    "date": 1653754752301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,16 +64,23 @@\n   });\r\n }\r\n \r\n const getProvinces = async() => {\r\n-\r\n   const realm = await Realm.open({\r\n-    schema: [provinces],\r\n+    path: \"myrealm\",\r\n+    schema: [TaskSchema],\r\n   });\r\n-\r\n-  const tasks = realm.objects(\"provinces\");\r\n-  console.log(\"REALM OBJECTS\", tasks);\r\n   \r\n+  const tasks = realm.objects(\"Task\");\r\n+  console.log(`The lists of tasks are: ${tasks.map((task) => task.name)}`);\r\n+  // filter for all tasks with a status of \"Open\"\r\n+  const openTasks = tasks.filtered(\"status = 'Open'\");\r\n+  console.log(\r\n+    `The lists of open tasks are: ${openTasks.map(\r\n+      (openTask) => openTask.name\r\n+    )}`\r\n+  );\r\n+  \r\n   return tasks\r\n }\r\n \r\n export default {saveProvinces, getProvinces}\r\n"
+                },
+                {
+                    "date": 1653754796114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,18 +68,11 @@\n   const realm = await Realm.open({\r\n     path: \"myrealm\",\r\n     schema: [TaskSchema],\r\n   });\r\n-  \r\n+\r\n   const tasks = realm.objects(\"Task\");\r\n-  console.log(`The lists of tasks are: ${tasks.map((task) => task.name)}`);\r\n-  // filter for all tasks with a status of \"Open\"\r\n-  const openTasks = tasks.filtered(\"status = 'Open'\");\r\n-  console.log(\r\n-    `The lists of open tasks are: ${openTasks.map(\r\n-      (openTask) => openTask.name\r\n-    )}`\r\n-  );\r\n+  console.log(`TASK`, tasks);\r\n   \r\n   return tasks\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1653754944871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,50 +29,30 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-const TaskSchema = {\r\n-  name: \"Task\",\r\n-  properties: {\r\n-    _id: \"int\",\r\n-    name: \"string\",\r\n-    status: \"string?\",\r\n-  },\r\n-  primaryKey: \"_id\",\r\n-};\r\n \r\n-\r\n-\r\n const saveProvinces = async(listProvinces: any) => {\r\n   const realm = await Realm.open({\r\n     path: \"myrealm\",\r\n-    schema: [TaskSchema],\r\n+    schema: [provinces],\r\n   });\r\n \r\n   let task1, task2;\r\n   realm.write(() => {\r\n-    task1 = realm.create(\"Task\", {\r\n-      _id: 1,\r\n-      name: \"go grocery shopping\",\r\n-      status: \"Open\",\r\n-    });\r\n-    task2 = realm.create(\"Task\", {\r\n-      _id: 2,\r\n-      name: \"go exercise\",\r\n-      status: \"Open\",\r\n-    });\r\n-    console.log(`created two tasks: ${task1.name} & ${task2.name}`);\r\n+    listProvinces?.map(e => {\r\n+      task1 = realm.create(\"provinces\", e);\r\n+    })\r\n   });\r\n }\r\n \r\n const getProvinces = async() => {\r\n   const realm = await Realm.open({\r\n     path: \"myrealm\",\r\n-    schema: [TaskSchema],\r\n+    schema: [provinces],\r\n   });\r\n \r\n-  const tasks = realm.objects(\"Task\");\r\n-  console.log(`TASK`, tasks);\r\n+  const tasks = realm.objects(\"provinces\");\r\n   \r\n   return tasks\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1653755162862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n     schema: [provinces],\r\n   });\r\n \r\n   const tasks = realm.objects(\"provinces\");\r\n+  console.log(\"LIST OF TASK\", tasks);\r\n   \r\n   return tasks\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1653755599893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,32 +29,43 @@\n     VALUE: 'string',\r\n   },\r\n };\r\n \r\n-\r\n-const saveProvinces = async(listProvinces: any) => {\r\n+const saveProvinces = async (listProvinces: any) => {\r\n   const realm = await Realm.open({\r\n-    path: \"myrealm\",\r\n+    path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n \r\n-  let task1, task2;\r\n+  let task1;\r\n   realm.write(() => {\r\n     listProvinces?.map(e => {\r\n-      task1 = realm.create(\"provinces\", e);\r\n-    })\r\n+      task1 = realm.create('provinces', e);\r\n+    });\r\n   });\r\n-}\r\n+};\r\n \r\n-const getProvinces = async() => {\r\n+const getProvinces = async () => {\r\n   const realm = await Realm.open({\r\n-    path: \"myrealm\",\r\n+    path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n \r\n-  const tasks = realm.objects(\"provinces\");\r\n-  console.log(\"LIST OF TASK\", tasks);\r\n-  \r\n-  return tasks\r\n-}\r\n+  const tasks = realm.objects('provinces');\r\n+  console.log('LIST OF TASK', tasks);\r\n \r\n-export default {saveProvinces, getProvinces}\r\n+  return tasks;\r\n+};\r\n+const saveDistricts = async (listDistricts: any) => {\r\n+  const realm = await Realm.open({\r\n+    path: 'myrealm',\r\n+    schema: [districts],\r\n+  });\r\n+  let district;\r\n+  realm.write(() => {\r\n+    listDistricts?.map(e => {\r\n+      district = realm.create('districts', e);\r\n+    });\r\n+  });\r\n+};\r\n+\r\n+export default {saveProvinces, getProvinces};\r\n"
+                },
+                {
+                    "date": 1653756080648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,8 @@\n     schema: [provinces],\r\n   });\r\n \r\n   const tasks = realm.objects('provinces');\r\n-  console.log('LIST OF TASK', tasks);\r\n \r\n   return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n@@ -67,5 +66,31 @@\n     });\r\n   });\r\n };\r\n \r\n-export default {saveProvinces, getProvinces};\r\n+const getDistricts = async () => {\r\n+  const realm = await Realm.open({\r\n+    path: 'myrealm',\r\n+    schema: [districts],\r\n+  });\r\n+};\r\n+\r\n+const saveWards = async (listWards: any) => {\r\n+  const realm = await Realm.open({\r\n+    path: 'myrealm',\r\n+    schema: [wards],\r\n+  });\r\n+  let ward;\r\n+  realm.write(() => {\r\n+    listWards?.map(e => {\r\n+      ward = realm.create('wards', e);\r\n+    });\r\n+  });\r\n+};\r\n+\r\n+const getWards = async () => {\r\n+  const realm = await Realm.open({\r\n+    path: 'myrealm',\r\n+    schema: [wards],\r\n+  });\r\n+};\r\n+export default {saveProvinces, getProvinces, saveDistricts, getDistricts};\r\n"
+                },
+                {
+                    "date": 1653756338615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,5 +92,5 @@\n     path: 'myrealm',\r\n     schema: [wards],\r\n   });\r\n };\r\n-export default {saveProvinces, getProvinces, saveDistricts, getDistricts};\r\n+export default {saveProvinces, getProvinces, saveDistricts, getDistricts, saveWards, getWards};\r\n"
+                },
+                {
+                    "date": 1653757538748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,10 @@\n   const realm = await Realm.open({\r\n     path: 'myrealm',\r\n     schema: [districts],\r\n   });\r\n+  const district =realm.objects('districts')\r\n+  return district\r\n };\r\n \r\n const saveWards = async (listWards: any) => {\r\n   const realm = await Realm.open({\r\n@@ -91,6 +93,8 @@\n   const realm = await Realm.open({\r\n     path: 'myrealm',\r\n     schema: [wards],\r\n   });\r\n+  const ward =realm.objects('wards')\r\n+  return ward\r\n };\r\n export default {saveProvinces, getProvinces, saveDistricts, getDistricts, saveWards, getWards};\r\n"
+                },
+                {
+                    "date": 1653757827098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n   return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n   const realm = await Realm.open({\r\n-    path: 'myrealm',\r\n+    path: 'mydistricts',\r\n     schema: [districts],\r\n   });\r\n   let district;\r\n   realm.write(() => {\r\n@@ -68,18 +68,18 @@\n };\r\n \r\n const getDistricts = async () => {\r\n   const realm = await Realm.open({\r\n-    path: 'myrealm',\r\n+    path: 'mydistricts',\r\n     schema: [districts],\r\n   });\r\n   const district =realm.objects('districts')\r\n   return district\r\n };\r\n \r\n const saveWards = async (listWards: any) => {\r\n   const realm = await Realm.open({\r\n-    path: 'myrealm',\r\n+    path: 'mywards',\r\n     schema: [wards],\r\n   });\r\n   let ward;\r\n   realm.write(() => {\r\n@@ -90,9 +90,9 @@\n };\r\n \r\n const getWards = async () => {\r\n   const realm = await Realm.open({\r\n-    path: 'myrealm',\r\n+    path: 'mywards',\r\n     schema: [wards],\r\n   });\r\n   const ward =realm.objects('wards')\r\n   return ward\r\n"
+                },
+                {
+                    "date": 1653758514597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,22 +48,20 @@\n   const realm = await Realm.open({\r\n     path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n-\r\n   const tasks = realm.objects('provinces');\r\n-\r\n   return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n   const realm = await Realm.open({\r\n     path: 'mydistricts',\r\n     schema: [districts],\r\n   });\r\n-  let district;\r\n+  let districtss;\r\n   realm.write(() => {\r\n     listDistricts?.map(e => {\r\n-      district = realm.create('districts', e);\r\n+      districtss = realm.create('districts', e);\r\n     });\r\n   });\r\n };\r\n \r\n@@ -80,12 +78,12 @@\n   const realm = await Realm.open({\r\n     path: 'mywards',\r\n     schema: [wards],\r\n   });\r\n-  let ward;\r\n+  let wardss;\r\n   realm.write(() => {\r\n     listWards?.map(e => {\r\n-      ward = realm.create('wards', e);\r\n+      wardss = realm.create('wards', e);\r\n     });\r\n   });\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1653759235586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,17 @@\n   properties: {\r\n     WARDS_ID: 'int?',\r\n     WARDS_NAME: 'string',\r\n     DISTRICT_ID: 'int?',\r\n-    LOCATION_CODE: 'int?',\r\n+    LOCATION_CODE: 'number',\r\n   },\r\n };\r\n \r\n const districts = {\r\n   name: 'districts',\r\n   properties: {\r\n     DISTRICT_ID: 'int?',\r\n-    DISTRICT_VALUE: 'int?',\r\n+    DISTRICT_VALUE: 'number',\r\n     DISTRICT_NAME: 'string',\r\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n"
+                },
+                {
+                    "date": 1653759300076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,17 @@\n   properties: {\r\n     WARDS_ID: 'int?',\r\n     WARDS_NAME: 'string',\r\n     DISTRICT_ID: 'int?',\r\n-    LOCATION_CODE: 'number',\r\n+    LOCATION_CODE: 'int?',\r\n   },\r\n };\r\n-\r\n+r\r\n const districts = {\r\n   name: 'districts',\r\n   properties: {\r\n     DISTRICT_ID: 'int?',\r\n-    DISTRICT_VALUE: 'number',\r\n+    DISTRICT_VALUE: 'int?',\r\n     DISTRICT_NAME: 'string',\r\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n"
+                },
+                {
+                    "date": 1653759336028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     DISTRICT_ID: 'int?',\r\n     LOCATION_CODE: 'int?',\r\n   },\r\n };\r\n-r\r\n+\r\n const districts = {\r\n   name: 'districts',\r\n   properties: {\r\n     DISTRICT_ID: 'int?',\r\n"
+                },
+                {
+                    "date": 1653759436768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,17 @@\n   properties: {\r\n     WARDS_ID: 'int?',\r\n     WARDS_NAME: 'string',\r\n     DISTRICT_ID: 'int?',\r\n-    LOCATION_CODE: 'int?',\r\n+    LOCATION_CODE: 'string',\r\n   },\r\n };\r\n \r\n const districts = {\r\n   name: 'districts',\r\n   properties: {\r\n     DISTRICT_ID: 'int?',\r\n-    DISTRICT_VALUE: 'int?',\r\n+    DISTRICT_VALUE: 'string',\r\n     DISTRICT_NAME: 'string',\r\n     PROVINCE_ID: 'int?',\r\n     VALUE: 'string',\r\n   },\r\n"
+                },
+                {
+                    "date": 1653760075648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n \r\n-  let task1;\r\n+  let task1\r\n   realm.write(() => {\r\n     listProvinces?.map(e => {\r\n       task1 = realm.create('provinces', e);\r\n     });\r\n"
+                },
+                {
+                    "date": 1653760392098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,10 @@\n     path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n   const tasks = realm.objects('provinces');\r\n+  console.log(\"LIST OF PROVINCE\", tasks);\r\n+  \r\n   return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n   const realm = await Realm.open({\r\n"
+                },
+                {
+                    "date": 1653760421756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,8 @@\n     path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n   const tasks = realm.objects('provinces');\r\n-  console.log(\"LIST OF PROVINCE\", tasks);\r\n   \r\n   return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n"
+                },
+                {
+                    "date": 1653760541193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,16 +43,17 @@\n     });\r\n   });\r\n };\r\n \r\n-const getProvinces = async () => {\r\n-  const realm = await Realm.open({\r\n-    path: 'myrealm',\r\n-    schema: [provinces],\r\n+const getProvinces = () => {\r\n+  return new Promise(async(resolve, reject) => {\r\n+    const realm = await Realm.open({\r\n+      path: 'myrealm',\r\n+      schema: [provinces],\r\n+    });\r\n+    const tasks = realm.objects('provinces');\r\n+    resolve(tasks)\r\n   });\r\n-  const tasks = realm.objects('provinces');\r\n-  \r\n-  return tasks;\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n   const realm = await Realm.open({\r\n     path: 'mydistricts',\r\n"
+                },
+                {
+                    "date": 1653760942764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,24 +35,24 @@\n     path: 'myrealm',\r\n     schema: [provinces],\r\n   });\r\n \r\n-  let task1\r\n+  let task1;\r\n   realm.write(() => {\r\n     listProvinces?.map(e => {\r\n       task1 = realm.create('provinces', e);\r\n     });\r\n   });\r\n };\r\n \r\n const getProvinces = () => {\r\n-  return new Promise(async(resolve, reject) => {\r\n+  return new Promise(async (resolve, reject) => {\r\n     const realm = await Realm.open({\r\n       path: 'myrealm',\r\n       schema: [provinces],\r\n     });\r\n     const tasks = realm.objects('provinces');\r\n-    resolve(tasks)\r\n+    resolve(tasks);\r\n   });\r\n };\r\n const saveDistricts = async (listDistricts: any) => {\r\n   const realm = await Realm.open({\r\n@@ -66,15 +66,17 @@\n     });\r\n   });\r\n };\r\n \r\n-const getDistricts = async () => {\r\n-  const realm = await Realm.open({\r\n-    path: 'mydistricts',\r\n-    schema: [districts],\r\n+const getDistricts = () => {\r\n+  return new Promise(async (resolve, reject) => {\r\n+    const realm = await Realm.open({\r\n+      path: 'mydistricts',\r\n+      schema: [districts],\r\n+    });\r\n+    const district = realm.objects('districts');\r\n+    resolve(district);\r\n   });\r\n-  const district =realm.objects('districts')\r\n-  return district\r\n };\r\n \r\n const saveWards = async (listWards: any) => {\r\n   const realm = await Realm.open({\r\n@@ -88,13 +90,22 @@\n     });\r\n   });\r\n };\r\n \r\n-const getWards = async () => {\r\n-  const realm = await Realm.open({\r\n-    path: 'mywards',\r\n-    schema: [wards],\r\n+const getWards = () => {\r\n+  return new Promise(async (resolve, reject) => {\r\n+    const realm = await Realm.open({\r\n+      path: 'mywards',\r\n+      schema: [wards],\r\n+    });\r\n+    const ward = realm.objects('wards');\r\n+    resolve(ward);\r\n   });\r\n-  const ward =realm.objects('wards')\r\n-  return ward\r\n };\r\n-export default {saveProvinces, getProvinces, saveDistricts, getDistricts, saveWards, getWards};\r\n+export default {\r\n+  saveProvinces,\r\n+  getProvinces,\r\n+  saveDistricts,\r\n+  getDistricts,\r\n+  saveWards,\r\n+  getWards,\r\n+};\r\n"
+                }
+            ],
+            "date": 1653754113880,
+            "name": "Commit-0",
+            "content": "import Realm from 'realm';\r\n\r\nconst provinces = {\r\n  name: 'provinces',\r\n  properties: {\r\n    PROVINCE_ID: 'int?',\r\n    PROVINCE_CODE: 'string?',\r\n    PROVINCE_NAME: 'string',\r\n    VALUE: 'string',\r\n  },\r\n};\r\nconst wards = {\r\n  name: 'wards',\r\n  properties: {\r\n    WARDS_ID: 'int?',\r\n    WARDS_NAME: 'string',\r\n    DISTRICT_ID: 'int?',\r\n    LOCATION_CODE: 'int?',\r\n  },\r\n};\r\n\r\nconst districts = {\r\n  name: 'districts',\r\n  properties: {\r\n    DISTRICT_ID: 'int?',\r\n    DISTRICT_VALUE: 'int?',\r\n    DISTRICT_NAME: 'string',\r\n    PROVINCE_ID: 'int?',\r\n    VALUE: 'string',\r\n  },\r\n};\r\n\r\n\r\n\r\nconst saveProvinces = async(listProvinces: any) => {\r\n  const realm = await Realm.open({\r\n    schema: [provinces],\r\n  });\r\n\r\n  realm.write(() => {\r\n    listProvinces?.map((e: any) => {\r\n      realm.create(\"provinces\", {\r\n        id: \"1\",\r\n        value: \"test\"\r\n      })\r\n    })\r\n  })\r\n}\r\n\r\nexport default {saveProvinces}\r\n"
+        }
+    ]
+}

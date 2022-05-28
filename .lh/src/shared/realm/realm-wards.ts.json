@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/shared/realm/realm-wards.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1652975113609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653749023197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +0,0 @@\n-import Realm from \"realm\";\r\n- class Wards extends Realm.Object {}\r\n-  Wards.schema ={\r\n-    name: \"Wards\",\r\n-    properties :{\r\n-        WARDS_ID :'int?',\r\n-        WARDS_NAME: 'string',\r\n-        DISTRICT_ID: 'int?',\r\n-        LOCATION_CODE: 'int?'\r\n-    }\r\n- }\r\n-  \r\n- export default new Realm({schema:[Wards]})\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653749109948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1652975113609,
+            "name": "Commit-0",
+            "content": "import Realm from \"realm\";\r\n class Wards extends Realm.Object {}\r\n  Wards.schema ={\r\n    name: \"Wards\",\r\n    properties :{\r\n        WARDS_ID :'int?',\r\n        WARDS_NAME: 'string',\r\n        DISTRICT_ID: 'int?',\r\n        LOCATION_CODE: 'int?'\r\n    }\r\n }\r\n  \r\n export default new Realm({schema:[Wards]})\r\n"
+        }
+    ]
+}
